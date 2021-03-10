@@ -1,0 +1,14 @@
+### 开发环境 ###
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/legendary?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java #重启目录
+      exclude: WEB-INF/**
+  freemarker:
+    cache: false    #页面不加载缓存，修改即时生效

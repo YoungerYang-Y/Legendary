@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: MBG
+  # 环境 dev|test|prod
+  profiles:
+    active: dev
+  datasource:
+    # 数据源专有配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      # 初始化时建立物理连接的个数
+      initial-size: 5
+      # 最小连接池数量
+      min-idle: 5
+      # 最大连接池数量 maxIdle已经不再使用
+      max-active: 20
+      # 获取连接时最大等待时间，单位毫秒
+      max-wait: 60000
+      # 用来检测连接是否有效的sql 必须是一个查询语句
+      validation-query: select 'x'
+      test-while-idle: true
+      # 申请连接时会执行validationQuery检测连接是否有效,开启会降低性能,默认为true
+      test-on-borrow: false
+      # 归还连接时会执行validationQuery检测连接是否有效,开启会降低性能,默认为true
+      test-on-return: false
+      # 是否缓存preparedStatement,mysql5.5+建议开启
+      pool-prepared-statements: true
+      # 当值大于0时，poolPreparedStatements会自动修改为true
+      max-pool-prepared-statement-per-connection-size: 20
+      # 合并多个DruidDataSource的监控数据
+      use-global-data-source-stat: true
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connection-properties: druid.stat.mergeSql=true;druid.state.slowSqlMillis=500
+      # 监控统计: filter:stat、日志监控: filter:log4j 或者 slf4j、防御SQL注入: filter:wall
+      filters: stat,wall,slf4j
+      # 设置访问druid监控页的账号和密码,默认没有
+      stat-view-servlet:
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        #不统计这些请求数据
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+

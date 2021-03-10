@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d31c0817-8ca3-48ba-8f0b-e87d806312c5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="package-info" />
+        <option value="JUnit4 Test Class" />
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1o97IVSJIwFAYDZJHMCCyvEYDvQ" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mgb/extend/mapper" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.44329897" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.yy.core.shiro.service" />
+      <recent name="com.yy.api.application.sys.user" />
+      <recent name="com.yy.api.mapper" />
+      <recent name="com.yy.mbg.domain.mapper" />
+      <recent name="com.yy.api.application.sys.role" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\Java\GitHub\TempName\Project\Core" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.yy.core.shiro" />
+      <recent name="com.yy.core" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yy.mgb.extend.dto" />
+      <recent name="com.yy.core.common" />
+      <recent name="" />
+      <recent name="com.yy.api.controller.vo" />
+      <recent name="com.yy.api.application.sys.user.mapper" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\Java\GitHub\Legendary\Legendary\MBG-Extend\src\main\java\com\yy\mgb\extend\mapper" />
+      <recent name="D:\Code\Java\GitHub\Legendary\Legendary\MBG-Extend\src\main\java\com\yy\mgb-extend" />
+      <recent name="D:\Code\Java\GitHub\Legendary\Legendary\MBG-Extend\src\main\java\com\yy\mgb-extend\mapper" />
+      <recent name="D:\Code\Java\GitHub\Legendary\Legendary\Core\src\main\java\com\yy\core\common" />
+      <recent name="D:\Code\Java\GitHub\Legendary\Legendary\Core\src\main\java\com\yy\core\shiro\service" />
+    </key>
+  </component>
+  <component name="RestServicesNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="Found 37 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+        </path>
+        <path>
+          <item name="Found 37 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Api" type="c588b436:RestServiceStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ApiApplication">
+    <configuration name="MyAutoGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yy.mbg.generator.MyAutoGenerator" />
+      <module name="MBG" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yy.mbg.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiTestTest.getAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Api" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yy.api.application.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yy.api.application.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.yy.api.application.impl.ApiTestTest" />
+      <option name="METHOD_NAME" value="getAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -Dlog4j.skipJansi=false" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiTestTest.wrapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Api" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yy.api.application.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yy.api.application.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.yy.api.application.impl.ApiTestTest" />
+      <option name="METHOD_NAME" value="wrapper" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -Dlog4j.skipJansi=false" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAbstract.beanWrapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Api" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yy.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yy.api" />
+      <option name="MAIN_CLASS_NAME" value="com.yy.api.TestAbstract" />
+      <option name="METHOD_NAME" value="beanWrapperTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -Dlog4j.skipJansi=false" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <useClassPathOnly />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea -Dlog4j.skipJansi=false" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yy.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yy.api.ApiApplication" />
+      <option name="ENABLE_JMX_AGENT" value="false" />
+      <option name="VM_PARAMETERS" value="-ea -Dlog4j.skipJansi=false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Core" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yy.core.CoreApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MyAutoGenerator" />
+      <item itemvalue="JUnit.ApiTestTest.getAll" />
+      <item itemvalue="JUnit.ApiTestTest.wrapper" />
+      <item itemvalue="JUnit.TestAbstract.beanWrapperTest" />
+      <item itemvalue="Spring Boot.CoreApplication" />
+      <item itemvalue="Spring Boot.ApiApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ApiApplication" />
+        <item itemvalue="JUnit.ApiTestTest.wrapper" />
+        <item itemvalue="JUnit.TestAbstract.beanWrapperTest" />
+        <item itemvalue="JUnit.ApiTestTest.getAll" />
+        <item itemvalue="Application.MyAutoGenerator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.18361375" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Failed" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d31c0817-8ca3-48ba-8f0b-e87d806312c5" name="Default Changelist" comment="" />
+      <created>1612686872411</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612686872411</updated>
+      <workItem from="1612686876056" duration="3337000" />
+      <workItem from="1612785522550" duration="12674000" />
+      <workItem from="1613186030404" duration="9440000" />
+      <workItem from="1613314243213" duration="2091000" />
+      <workItem from="1613552771658" duration="118742000" />
+      <workItem from="1614218904849" duration="32866000" />
+      <workItem from="1614345912310" duration="20346000" />
+      <workItem from="1614496973568" duration="49426000" />
+      <workItem from="1614864919454" duration="416000" />
+      <workItem from="1614865357127" duration="399000" />
+      <workItem from="1614865775783" duration="38087000" />
+      <workItem from="1615339532134" duration="18149000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="359" y="0" width="735" height="860" key="#ApiApplication" timestamp="1614867493792">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="359" y="0" width="735" height="860" key="#ApiApplication/0.0.1440.860@0.0.1440.860" timestamp="1614867493792" />
+    <state x="314" y="109" key="#Custom_Plugin_Repositories" timestamp="1614865684325">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="314" y="109" key="#Custom_Plugin_Repositories/0.0.1440.860@0.0.1440.860" timestamp="1614865684325" />
+    <state x="314" y="109" key="#HTTP_Proxy" timestamp="1614865495213">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="314" y="109" key="#HTTP_Proxy/0.0.1440.860@0.0.1440.860" timestamp="1614865495213" />
+    <state x="314" y="109" key="#Plugins" timestamp="1614866050752">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="314" y="109" key="#Plugins/0.0.1440.860@0.0.1440.860" timestamp="1614866050752" />
+    <state x="314" y="109" key="#Project_Structure" timestamp="1615368287660">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="314" y="109" key="#Project_Structure/0.0.1440.860@0.0.1440.860" timestamp="1615368287660" />
+    <state x="177" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615349003529">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="177" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1615349003529" />
+    <state x="410" y="253" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615345544032">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="410" y="253" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1615345544032" />
+    <state x="502" y="159" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1614345961303">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="502" y="159" key="#com.intellij.ide.macro.MacrosDialog/0.0.1440.860@0.0.1440.860" timestamp="1614345961303" />
+    <state x="527" y="160" key="#com.intellij.ide.util.MemberChooser" timestamp="1615281310092">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="527" y="160" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1615281310092" />
+    <state x="330" y="376" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1615361034471">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="330" y="376" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.860@0.0.1440.860" timestamp="1615361034471" />
+    <state x="509" y="317" width="431" height="290" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1614657325535">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="509" y="317" width="431" height="290" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.860@0.0.1440.860" timestamp="1614657325535" />
+    <state x="504" y="321" width="431" height="257" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1615361036675">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="504" y="321" width="431" height="257" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.860@0.0.1440.860" timestamp="1615361036675" />
+    <state x="436" y="162" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1614258536335">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="436" y="162" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1440.860@0.0.1440.860" timestamp="1614258536335" />
+    <state x="389" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614671915159">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="389" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.860@0.0.1440.860" timestamp="1614671915159" />
+    <state x="452" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615340338222">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="452" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.860@0.0.1440.860" timestamp="1615340338222" />
+    <state width="432" height="466" key="DebuggerActiveHint" timestamp="1614306947526">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="432" height="466" key="DebuggerActiveHint/0.0.1440.860@0.0.1440.860" timestamp="1614306947526" />
+    <state x="502" y="206" key="FileChooserDialogImpl" timestamp="1612688262035">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="502" y="206" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1612688262035" />
+    <state width="1115" height="218" key="GridCell.Tab.0.bottom" timestamp="1615368573954">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1115" height="218" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1615368573954" />
+    <state width="1115" height="218" key="GridCell.Tab.0.center" timestamp="1615368573954">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1115" height="218" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1615368573954" />
+    <state width="1115" height="218" key="GridCell.Tab.0.left" timestamp="1615368573954">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1115" height="218" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1615368573954" />
+    <state width="1115" height="218" key="GridCell.Tab.0.right" timestamp="1615368573954">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1115" height="218" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1615368573954" />
+    <state width="545" height="230" key="GridCell.Tab.1.bottom" timestamp="1615349136564">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="545" height="230" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1615349136564" />
+    <state width="545" height="230" key="GridCell.Tab.1.center" timestamp="1615349136564">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="545" height="230" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1615349136564" />
+    <state width="545" height="230" key="GridCell.Tab.1.left" timestamp="1615349136564">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="545" height="230" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1615349136564" />
+    <state width="545" height="230" key="GridCell.Tab.1.right" timestamp="1615349136564">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="545" height="230" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1615349136564" />
+    <state width="1115" height="230" key="GridCell.Tab.2.bottom" timestamp="1615348720103">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1115" height="230" key="GridCell.Tab.2.bottom/0.0.1440.860@0.0.1440.860" timestamp="1615348720103" />
+    <state width="1115" height="230" key="GridCell.Tab.2.center" timestamp="1615348720103">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1115" height="230" key="GridCell.Tab.2.center/0.0.1440.860@0.0.1440.860" timestamp="1615348720103" />
+    <state width="1115" height="230" key="GridCell.Tab.2.left" timestamp="1615348720103">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1115" height="230" key="GridCell.Tab.2.left/0.0.1440.860@0.0.1440.860" timestamp="1615348720103" />
+    <state width="1115" height="230" key="GridCell.Tab.2.right" timestamp="1615348720103">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1115" height="230" key="GridCell.Tab.2.right/0.0.1440.860@0.0.1440.860" timestamp="1615348720103" />
+    <state x="252" y="106" key="Maven.ArtifactSearchDialog" timestamp="1614657168990">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="252" y="106" key="Maven.ArtifactSearchDialog/0.0.1440.860@0.0.1440.860" timestamp="1614657168990" />
+    <state x="223" y="11" key="SettingsEditor" timestamp="1615348984875">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="223" y="11" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1615348984875" />
+    <state width="734" height="668" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1615259830362">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="734" height="668" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.0.1440.860@0.0.1440.860" timestamp="1615259830362" />
+    <state x="493" y="181" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1614657008589">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="493" y="181" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1440.860@0.0.1440.860" timestamp="1614657008589" />
+    <state x="276" y="187" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1614306227507">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="276" y="187" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.860@0.0.1440.860" timestamp="1614306227507" />
+    <state x="100" y="100" width="1240" height="700" key="dock-window-1" timestamp="1614300380215">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="dock-window-1/0.0.1440.860@0.0.1440.860" timestamp="1614300380215" />
+    <state x="147" y="129" key="new project wizard" timestamp="1615364778964">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="147" y="129" key="new project wizard/0.0.1440.860@0.0.1440.860" timestamp="1615364778964" />
+    <state x="384" y="209" key="run.anything.popup" timestamp="1615366905591">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="384" y="209" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1615366905591" />
+    <state x="383" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1615366925922">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="383" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1615366925922" />
+    <state x="347" y="133" key="spring file set editor" timestamp="1615368163610">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="347" y="133" key="spring file set editor/0.0.1440.860@0.0.1440.860" timestamp="1615368163610" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/filter/ShiroFormAuthenticationFilter.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

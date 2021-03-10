@@ -1,0 +1,11 @@
+### 生产环境 ###
+# 配置启动端口
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/poseidon?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+
+logging:
+  level.root: info
