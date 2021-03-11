@@ -1,2 +1,2 @@
 # Legendary
-That is best！
+首次提交
