@@ -1,52 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d31c0817-8ca3-48ba-8f0b-e87d806312c5" name="Default Changelist" comment="1、解决MBG-Extend模块的mapper无法载入bean的问题&#10;2、优化代码结构，第一阶段完成">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="d31c0817-8ca3-48ba-8f0b-e87d806312c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mbg/extend/dto/UserPermissionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mbg/extend/dto/UserRoleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mbg/extend/mapper/UserPermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mbg/extend/mapper/UserRoleMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/menu/dto/PermissionDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/menu/util/MenuTreeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/menu/util/MenuTreeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/role/IRoleManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/role/IRoleManage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/role/RoleManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/role/RoleManage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/user/IUserManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/user/IUserManage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/user/UserManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/user/UserManage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/test/java/com/yy/api/application/sys/user/IUserManageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/test/java/com/yy/api/application/sys/user/IUserManageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/menu/dto/PermissionDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/menu/util/MenuTreeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/menu/util/MenuTreeUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/role/IRoleManage.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/role/IRoleManage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/role/RoleManage.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/role/RoleManage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/user/IUserManage.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/user/IUserManage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/user/UserManage.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/user/UserManage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/controller/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/target/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/target/test-classes/com/yy/api/application/sys/user/IUserManageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/test-classes/com/yy/api/application/sys/user/IUserManageTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/CoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/CoreApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/aspect/RedisCacheAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/aspect/RedisCacheAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/config/ShiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/realm/CustomRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/realm/CustomRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/service/ILoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/service/ILoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/test/java/com/yy/core/shiro/service/ILoginServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/test/java/com/yy/core/shiro/service/ILoginServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mgb/extend/dto/UserPermissionDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mgb/extend/dto/UserRoleDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mgb/extend/mapper/UserPermissionMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mgb/extend/mapper/UserRoleMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBG-Extend/target/classes/com/yy/mgb/extend/dto/UserPermissionDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBG-Extend/target/classes/com/yy/mgb/extend/dto/UserRoleDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBG-Extend/target/classes/com/yy/mgb/extend/mapper/UserPermissionMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBG-Extend/target/classes/com/yy/mgb/extend/mapper/UserRoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBG/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MBG/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBG/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/MBG/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBG/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/MBG/target/classes/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +28,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -329,12 +290,31 @@
       <workItem from="1614865357127" duration="399000" />
       <workItem from="1614865775783" duration="38087000" />
       <workItem from="1615339532134" duration="30969000" />
-      <workItem from="1615611318308" duration="471000" />
+      <workItem from="1615611318308" duration="719000" />
     </task>
+    <task id="LOCAL-00001" summary="1、解决MBG-Extend模块的mapper无法载入bean的问题&#10;2、优化代码结构，第一阶段完成">
+      <created>1615611893519</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615611893520</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1、解决MBG-Extend模块的mapper无法载入bean的问题&#10;2、优化代码结构，第一阶段完成" />
@@ -401,10 +381,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="452" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.860@0.0.1440.860" timestamp="1615446167014" />
-    <state x="178" y="43" width="1109" height="814" key="CommitChangelistDialog2" timestamp="1615611766309">
+    <state x="178" y="43" width="1109" height="814" key="CommitChangelistDialog2" timestamp="1615611892342">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="178" y="43" width="1109" height="814" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1615611766309" />
+    <state x="178" y="43" width="1109" height="814" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1615611892342" />
     <state width="432" height="466" key="DebuggerActiveHint" timestamp="1614306947526">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -477,6 +457,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="734" height="668" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.0.1440.860@0.0.1440.860" timestamp="1615259830362" />
+    <state x="517" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615611944608">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="517" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1615611944608" />
     <state x="493" y="181" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1614657008589">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
