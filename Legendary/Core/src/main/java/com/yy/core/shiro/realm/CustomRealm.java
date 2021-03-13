@@ -33,7 +33,7 @@ public class CustomRealm extends AuthorizingRealm {
         // 获取登录用户名
         String name = (String) principalCollection.getPrimaryPrincipal();
         // 查询用户信息
-        User user = loginService.getUserByName(name);
+        User user = loginService.getUser(name);
         //添加角色和权限
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         for (Role role : user.getRoles()) {
@@ -66,7 +66,7 @@ public class CustomRealm extends AuthorizingRealm {
             throw new UnknownAccountException("No account found for user [" + username + "]");
         }
 
-        User user = loginService.getUserByName(username);
+        User user = loginService.getUser(username);
         if (user == null) {
             //这里返回后会报出对应异常
             throw new UnknownAccountException("用户名或密码错误！");

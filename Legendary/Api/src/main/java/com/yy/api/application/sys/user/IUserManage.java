@@ -1,7 +1,7 @@
 package com.yy.api.application.sys.user;
 
 import com.yy.api.application.sys.menu.dto.MenuTree;
-import com.yy.api.application.sys.menu.dto.PermissionDto;
+import com.yy.api.application.sys.permision.dto.PermissionResultDto;
 import com.yy.api.application.sys.role.dto.RoleDto;
 import com.yy.api.application.sys.user.dto.UserDto;
 import com.yy.api.application.sys.user.dto.UserParam;
@@ -73,7 +73,7 @@ public interface IUserManage {
      * @param id 用户id
      * @return 权限集
      */
-    List<PermissionDto> getUserPermission(Integer id);
+    List<PermissionResultDto> getUserPermission(Integer id);
 
     /**
      * 获取用户的所有角色信息

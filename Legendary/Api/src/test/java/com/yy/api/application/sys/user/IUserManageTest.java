@@ -1,7 +1,7 @@
 package com.yy.api.application.sys.user;
 
 import com.yy.api.TestAbstract;
-import com.yy.api.application.sys.menu.dto.PermissionDto;
+import com.yy.api.application.sys.permision.dto.PermissionResultDto;
 import com.yy.api.controller.vo.result.PermissionResult;
 import com.yy.core.utils.CollectionCopyUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +26,7 @@ public class IUserManageTest extends TestAbstract {
     @Test
     public void copy(){
 
-        List<PermissionDto> list = userManage.getUserPermission(1);
+        List<PermissionResultDto> list = userManage.getUserPermission(1);
 
         List<PermissionResult> voList = CollectionCopyUtil.copyProperties(list,PermissionResult.class);
         log.info(voList.toString());

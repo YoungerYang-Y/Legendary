@@ -3,7 +3,7 @@ package com.yy.api.application.sys.role;
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.yy.api.application.sys.menu.dto.PermissionDto;
+import com.yy.api.application.sys.permision.dto.PermissionResultDto;
 import com.yy.api.application.sys.role.dto.RoleDto;
 import com.yy.api.application.sys.role.dto.RoleParam;
 import com.yy.core.shiro.api.CacheApi;
@@ -90,15 +90,15 @@ public class RoleManage implements IRoleManage {
     }
 
     @Override
-    public List<PermissionDto> getRolePermission(Integer roleId) {
+    public List<PermissionResultDto> getRolePermission(Integer roleId) {
 
-        List<PermissionDto> result = new ArrayList<>();
+        List<PermissionResultDto> result = new ArrayList<>();
         QueryWrapper<SysRolePermissionRelation> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("role_id" , roleId);
         List<SysRolePermissionRelation> list = rolePermissionRelationService.list(queryWrapper);
         if (list.size() > 0){
             List<SysPermission> permissions = permissionService.listByIds(list.stream().map(SysRolePermissionRelation::getPermissionId).collect(Collectors.toList()));
-            result = CollectionCopyUtil.copyProperties(permissions, PermissionDto.class);
+            result = CollectionCopyUtil.copyProperties(permissions, PermissionResultDto.class);
         }
         return result;
     }

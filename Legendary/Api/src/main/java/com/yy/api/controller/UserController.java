@@ -2,7 +2,7 @@ package com.yy.api.controller;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.yy.api.application.sys.menu.dto.MenuTree;
-import com.yy.api.application.sys.menu.dto.PermissionDto;
+import com.yy.api.application.sys.permision.dto.PermissionResultDto;
 import com.yy.api.application.sys.role.dto.RoleDto;
 import com.yy.api.application.sys.user.IUserManage;
 import com.yy.api.application.sys.user.dto.UserDto;
@@ -66,7 +66,7 @@ public class UserController {
     @GetMapping(value = "/{id}/permissions")
     public CommonResult getUserPermission(@PathVariable("id") Integer id) {
 
-        List<PermissionDto> permissionDtoList = userManage.getUserPermission(id);
+        List<PermissionResultDto> permissionDtoList = userManage.getUserPermission(id);
         List<PermissionResult> result = CollectionCopyUtil.copyProperties(permissionDtoList,PermissionResult.class);
         return CommonResult.success(result);
     }

@@ -3,8 +3,8 @@ package com.yy.api.application.sys.user;
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yy.api.application.sys.menu.dto.MenuTree;
-import com.yy.api.application.sys.menu.dto.PermissionDto;
 import com.yy.api.application.sys.menu.util.MenuTreeUtil;
+import com.yy.api.application.sys.permision.dto.PermissionResultDto;
 import com.yy.api.application.sys.role.dto.RoleDto;
 import com.yy.api.application.sys.user.dto.UserDto;
 import com.yy.api.application.sys.user.dto.UserParam;
@@ -15,16 +15,15 @@ import com.yy.mbg.domain.entity.SysUserRoleRelation;
 import com.yy.mbg.domain.service.ISysUserInfoService;
 import com.yy.mbg.domain.service.ISysUserRoleRelationService;
 import com.yy.mbg.domain.service.ISysUserService;
-import com.yy.mgb.extend.dto.UserPermissionDto;
-import com.yy.mgb.extend.dto.UserRoleDto;
-import com.yy.mgb.extend.mapper.UserPermissionMapper;
-import com.yy.mgb.extend.mapper.UserRoleMapper;
+import com.yy.mbg.extend.dto.UserPermissionDto;
+import com.yy.mbg.extend.dto.UserRoleDto;
+import com.yy.mbg.extend.mapper.UserPermissionMapper;
+import com.yy.mbg.extend.mapper.UserRoleMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -148,10 +147,10 @@ public class UserManage implements IUserManage {
     }
 
     @Override
-    public List<PermissionDto> getUserPermission(Integer id) {
+    public List<PermissionResultDto> getUserPermission(Integer id) {
 
         List<UserPermissionDto> userPermission = userPermissionMapper.getUserPermission(id);
-        return CollectionCopyUtil.copyProperties(userPermission,PermissionDto.class);
+        return CollectionCopyUtil.copyProperties(userPermission,PermissionResultDto.class);
     }
 
     @Override
@@ -167,7 +166,7 @@ public class UserManage implements IUserManage {
 
         // 1、根据用户id获取符合条件的目录菜单权限集
         List<UserPermissionDto> list = userPermissionMapper.getUserMenu(id);
-        List<PermissionDto> resources = CollectionCopyUtil.copyProperties(list, PermissionDto.class);
+        List<PermissionResultDto> resources = CollectionCopyUtil.copyProperties(list, PermissionResultDto.class);
         // 2、生成菜单树
         return MenuTreeUtil.getMenu(resources);
     }

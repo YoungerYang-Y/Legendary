@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Core" />
         <module name="MBG-Extend" />
         <module name="Api" />
+        <module name="Core" />
         <module name="MBG" />
       </profile>
     </annotationProcessing>

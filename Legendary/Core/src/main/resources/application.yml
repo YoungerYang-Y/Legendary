@@ -2,7 +2,7 @@
 server:
   tomcat:
     uri-encoding: UTF-8
-  port: 8081
+  port: 8080
 
 spring:
   application:
@@ -25,24 +25,3 @@ spring:
 #        max-idle: 10 # 连接池中的最大空闲连接
 #        max-wait: -1ms  # 连接池最大阻塞等待时间（使用负值表示没有限制）
 #        min-idle: 5 # 连接池中的最小空闲连接
-
-# MybatisPlus
-mybatis-plus:
-  global-config:
-    db-config:
-      id-type: auto
-      field-strategy: not_empty
-      #驼峰下划线转换
-      column-underline: true
-      #逻辑删除配置
-      logic-delete-field: flag
-      logic-delete-value: 0
-      logic-not-delete-value: 1
-      db-type: mysql
-    refresh: false
-  configuration:
-    map-underscore-to-camel-case: true
-    cache-enabled: false
-  mapper-locations: classpath*:/mapper/*.xml,classpath*:/mapper/**/*.xml
-  type-aliases-package: classpath:com.yy.mbg.domain.entity
-

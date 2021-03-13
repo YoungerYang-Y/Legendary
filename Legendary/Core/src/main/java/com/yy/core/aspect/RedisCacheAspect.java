@@ -26,13 +26,10 @@ public class RedisCacheAspect {
      * 获取缓存验证
      */
     private static final Pattern GET_CACHE_PATTERN = Pattern.compile("^((get)|(query)|(select)|(list)).*$");
-
     /**
      * 更新缓存验证
      */
     private static final Pattern SET_CACHE_PATTERN = Pattern.compile("^((add)|(insert)|(save)|(batchInsert)|(batchUpdate)|(update)|(delete)|(change)|(remove)).*$");
-
-
 
     private RedisUtil redisUtil;
 
@@ -122,35 +119,4 @@ public class RedisCacheAspect {
         }
         return joinPoint.proceed();
     }
-
-//    /**
-//     * @Title: getObject
-//     * @Description: 使用key获取数据  不存在则查询添加
-//     * @param beginTime : 切面开始时间
-//     * @param joinPoint : 切面对象
-//     * @param key : 获取redis数据的key值
-//     * @return java.lang.Object
-//     **/
-//    private Object getObject(long beginTime,ProceedingJoinPoint joinPoint,String key) throws Throwable {
-//        ValueOperations<String, Object> operations = redisTemplate.opsForValue();
-//        boolean hasKey = redisTemplate.hasKey(key);
-//        Object object = null;
-//        if(hasKey){
-//            // 缓存中获取到数据，直接返回。
-//            object = operations.get(key);
-//            log.warn("从缓存中获取到 key 为 ["+key+" ] : 的数据 >>>> " + object.toString());
-//            log.warn("AOP 获取缓存 >>>> end 耗时：" + (System.currentTimeMillis() - beginTime) + "ms.");
-//            return object;
-//        }
-//        if(object == null) {
-//            // 缓存中没有数据，调用原始方法查询数据库
-//            object = joinPoint.proceed();
-//            // 设置超时时间30分钟
-//            operations.set(key, object, TIME_OUT, TimeUnit.MINUTES);
-//            log.warn("向 Redis 添加 key 为 ["+key+" ] , 存活时长为 "+TIME_OUT+" min 的数据 >>>> " + object.toString());
-//            log.warn("AOP 添加缓存 >>>> end 耗时：" + (System.currentTimeMillis() - beginTime) + "ms.");
-//        }
-//        return object;
-//    }
-
 }

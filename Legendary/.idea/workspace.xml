@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d31c0817-8ca3-48ba-8f0b-e87d806312c5" name="Default Changelist" comment="" />
+    <list default="true" id="d31c0817-8ca3-48ba-8f0b-e87d806312c5" name="Default Changelist" comment="1、解决MBG-Extend模块的mapper无法载入bean的问题&#10;2、优化代码结构，第一阶段完成">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/menu/dto/PermissionDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/menu/util/MenuTreeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/menu/util/MenuTreeUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/role/IRoleManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/role/IRoleManage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/role/RoleManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/role/RoleManage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/user/IUserManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/user/IUserManage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/user/UserManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/application/sys/user/UserManage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/java/com/yy/api/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/src/test/java/com/yy/api/application/sys/user/IUserManageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/test/java/com/yy/api/application/sys/user/IUserManageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/menu/dto/PermissionDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/menu/util/MenuTreeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/menu/util/MenuTreeUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/role/IRoleManage.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/role/IRoleManage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/role/RoleManage.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/role/RoleManage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/user/IUserManage.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/user/IUserManage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/user/UserManage.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/application/sys/user/UserManage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/controller/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/target/classes/com/yy/api/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/com/yy/api/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/target/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/classes/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/target/test-classes/com/yy/api/application/sys/user/IUserManageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Api/target/test-classes/com/yy/api/application/sys/user/IUserManageTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/CoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/CoreApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/aspect/RedisCacheAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/aspect/RedisCacheAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/config/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/realm/CustomRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/realm/CustomRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/service/ILoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/service/ILoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/java/com/yy/core/shiro/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/src/test/java/com/yy/core/shiro/service/ILoginServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/test/java/com/yy/core/shiro/service/ILoginServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mgb/extend/dto/UserPermissionDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mgb/extend/dto/UserRoleDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mgb/extend/mapper/UserPermissionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mgb/extend/mapper/UserRoleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MBG-Extend/target/classes/com/yy/mgb/extend/dto/UserPermissionDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MBG-Extend/target/classes/com/yy/mgb/extend/dto/UserRoleDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MBG-Extend/target/classes/com/yy/mgb/extend/mapper/UserPermissionMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MBG-Extend/target/classes/com/yy/mgb/extend/mapper/UserRoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MBG/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MBG/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MBG/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/MBG/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MBG/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/MBG/target/classes/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +62,12 @@
         <option value="Interface" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -27,6 +77,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1o97IVSJIwFAYDZJHMCCyvEYDvQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
@@ -35,6 +86,8 @@
   <component name="PropertiesComponent">
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowHierarchy.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="" />
@@ -103,7 +156,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiApplication">
+  <component name="RunManager" selected="Spring Boot.CoreApplication">
     <configuration name="MyAutoGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.yy.mbg.generator.MyAutoGenerator" />
       <module name="MBG" />
@@ -204,6 +257,8 @@
     <configuration name="CoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Core" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.yy.core.CoreApplication" />
+      <option name="VM_PARAMETERS" value="-ea -Dlog4j.skipJansi=false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -240,12 +295,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Failed" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Not Started" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -278,12 +328,17 @@
       <workItem from="1614864919454" duration="416000" />
       <workItem from="1614865357127" duration="399000" />
       <workItem from="1614865775783" duration="38087000" />
-      <workItem from="1615339532134" duration="18149000" />
+      <workItem from="1615339532134" duration="30969000" />
+      <workItem from="1615611318308" duration="471000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1、解决MBG-Extend模块的mapper无法载入bean的问题&#10;2、优化代码结构，第一阶段完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、解决MBG-Extend模块的mapper无法载入bean的问题&#10;2、优化代码结构，第一阶段完成" />
   </component>
   <component name="WindowStateProjectService">
     <state x="359" y="0" width="735" height="860" key="#ApiApplication" timestamp="1614867493792">
@@ -306,10 +361,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="314" y="109" key="#Project_Structure/0.0.1440.860@0.0.1440.860" timestamp="1615368287660" />
-    <state x="177" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615349003529">
+    <state x="177" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615454072304">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="177" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1615349003529" />
+    <state x="177" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1615454072304" />
     <state x="410" y="253" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615345544032">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -318,10 +373,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="502" y="159" key="#com.intellij.ide.macro.MacrosDialog/0.0.1440.860@0.0.1440.860" timestamp="1614345961303" />
-    <state x="527" y="160" key="#com.intellij.ide.util.MemberChooser" timestamp="1615281310092">
+    <state x="527" y="160" key="#com.intellij.ide.util.MemberChooser" timestamp="1615447319356">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="527" y="160" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1615281310092" />
+    <state x="527" y="160" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1615447319356" />
     <state x="330" y="376" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1615361034471">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -342,66 +397,74 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="389" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.860@0.0.1440.860" timestamp="1614671915159" />
-    <state x="452" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615340338222">
+    <state x="452" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615446167014">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="452" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.860@0.0.1440.860" timestamp="1615340338222" />
+    <state x="452" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.860@0.0.1440.860" timestamp="1615446167014" />
+    <state x="178" y="43" width="1109" height="814" key="CommitChangelistDialog2" timestamp="1615611766309">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="178" y="43" width="1109" height="814" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1615611766309" />
     <state width="432" height="466" key="DebuggerActiveHint" timestamp="1614306947526">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="432" height="466" key="DebuggerActiveHint/0.0.1440.860@0.0.1440.860" timestamp="1614306947526" />
+    <state x="151" y="89" key="DiffContextDialog" timestamp="1615611541794">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="151" y="89" key="DiffContextDialog/0.0.1440.860@0.0.1440.860" timestamp="1615611541794" />
     <state x="502" y="206" key="FileChooserDialogImpl" timestamp="1612688262035">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="502" y="206" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1612688262035" />
-    <state width="1115" height="218" key="GridCell.Tab.0.bottom" timestamp="1615368573954">
+    <state width="1115" height="201" key="GridCell.Tab.0.bottom" timestamp="1615459119753">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1115" height="218" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1615368573954" />
-    <state width="1115" height="218" key="GridCell.Tab.0.center" timestamp="1615368573954">
+    <state width="1115" height="201" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1615459119753" />
+    <state width="1115" height="201" key="GridCell.Tab.0.center" timestamp="1615459119752">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1115" height="218" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1615368573954" />
-    <state width="1115" height="218" key="GridCell.Tab.0.left" timestamp="1615368573954">
+    <state width="1115" height="201" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1615459119752" />
+    <state width="1115" height="201" key="GridCell.Tab.0.left" timestamp="1615459119752">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1115" height="218" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1615368573954" />
-    <state width="1115" height="218" key="GridCell.Tab.0.right" timestamp="1615368573954">
+    <state width="1115" height="201" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1615459119752" />
+    <state width="1115" height="201" key="GridCell.Tab.0.right" timestamp="1615459119752">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1115" height="218" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1615368573954" />
-    <state width="545" height="230" key="GridCell.Tab.1.bottom" timestamp="1615349136564">
+    <state width="1115" height="201" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1615459119752" />
+    <state width="1115" height="201" key="GridCell.Tab.1.bottom" timestamp="1615459119741">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="545" height="230" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1615349136564" />
-    <state width="545" height="230" key="GridCell.Tab.1.center" timestamp="1615349136564">
+    <state width="1115" height="201" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1615459119741" />
+    <state width="1115" height="201" key="GridCell.Tab.1.center" timestamp="1615459119741">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="545" height="230" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1615349136564" />
-    <state width="545" height="230" key="GridCell.Tab.1.left" timestamp="1615349136564">
+    <state width="1115" height="201" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1615459119741" />
+    <state width="1115" height="201" key="GridCell.Tab.1.left" timestamp="1615459119741">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="545" height="230" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1615349136564" />
-    <state width="545" height="230" key="GridCell.Tab.1.right" timestamp="1615349136564">
+    <state width="1115" height="201" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1615459119741" />
+    <state width="1115" height="201" key="GridCell.Tab.1.right" timestamp="1615459119741">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="545" height="230" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1615349136564" />
-    <state width="1115" height="230" key="GridCell.Tab.2.bottom" timestamp="1615348720103">
+    <state width="1115" height="201" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1615459119741" />
+    <state width="1115" height="202" key="GridCell.Tab.2.bottom" timestamp="1615453872245">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1115" height="230" key="GridCell.Tab.2.bottom/0.0.1440.860@0.0.1440.860" timestamp="1615348720103" />
-    <state width="1115" height="230" key="GridCell.Tab.2.center" timestamp="1615348720103">
+    <state width="1115" height="202" key="GridCell.Tab.2.bottom/0.0.1440.860@0.0.1440.860" timestamp="1615453872245" />
+    <state width="1115" height="202" key="GridCell.Tab.2.center" timestamp="1615453872245">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1115" height="230" key="GridCell.Tab.2.center/0.0.1440.860@0.0.1440.860" timestamp="1615348720103" />
-    <state width="1115" height="230" key="GridCell.Tab.2.left" timestamp="1615348720103">
+    <state width="1115" height="202" key="GridCell.Tab.2.center/0.0.1440.860@0.0.1440.860" timestamp="1615453872245" />
+    <state width="1115" height="202" key="GridCell.Tab.2.left" timestamp="1615453872245">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1115" height="230" key="GridCell.Tab.2.left/0.0.1440.860@0.0.1440.860" timestamp="1615348720103" />
-    <state width="1115" height="230" key="GridCell.Tab.2.right" timestamp="1615348720103">
+    <state width="1115" height="202" key="GridCell.Tab.2.left/0.0.1440.860@0.0.1440.860" timestamp="1615453872245" />
+    <state width="1115" height="202" key="GridCell.Tab.2.right" timestamp="1615453872245">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1115" height="230" key="GridCell.Tab.2.right/0.0.1440.860@0.0.1440.860" timestamp="1615348720103" />
+    <state width="1115" height="202" key="GridCell.Tab.2.right/0.0.1440.860@0.0.1440.860" timestamp="1615453872245" />
     <state x="252" y="106" key="Maven.ArtifactSearchDialog" timestamp="1614657168990">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

@@ -24,7 +24,7 @@ public class ILoginServiceTest extends TestAbstract {
     @Test
     public void getUserByName() {
 
-        User yy = loginService.getUserByName("yy");
+        User yy = loginService.getUser("yy");
         log.info(yy.toString());
     }
 }

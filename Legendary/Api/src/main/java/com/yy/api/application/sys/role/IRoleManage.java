@@ -1,7 +1,7 @@
 package com.yy.api.application.sys.role;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.yy.api.application.sys.menu.dto.PermissionDto;
+import com.yy.api.application.sys.permision.dto.PermissionResultDto;
 import com.yy.api.application.sys.role.dto.RoleDto;
 import com.yy.api.application.sys.role.dto.RoleParam;
 import com.yy.core.common.CommonPage;
@@ -62,7 +62,7 @@ public interface IRoleManage {
      * @param roleId 角色id
      * @return 返回权限集
      */
-    List<PermissionDto> getRolePermission(Integer roleId);
+    List<PermissionResultDto> getRolePermission(Integer roleId);
 
     /**
      * 新增角色的权限

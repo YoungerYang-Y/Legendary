@@ -104,7 +104,7 @@
             <AppenderRef ref="Console" />
             <Appender-ref ref="RollingFileDebug"/>
         </Logger>
-        <Logger name="com.yy.api.application" level="DEBUG" additivity="false">
+        <Logger name="com.yy.mbg.extend.mapper" level="DEBUG" additivity="false">
             <AppenderRef ref="Console" />
             <Appender-ref ref="RollingFileDebug"/>
         </Logger>

@@ -2,7 +2,7 @@ package com.yy.api.controller;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.yy.api.application.sys.menu.dto.PermissionDto;
+import com.yy.api.application.sys.permision.dto.PermissionResultDto;
 import com.yy.api.application.sys.role.IRoleManage;
 import com.yy.api.application.sys.role.dto.RoleDto;
 import com.yy.api.application.sys.role.dto.RoleParam;
@@ -65,7 +65,7 @@ public class RoleController {
     @GetMapping("/{id}/permission")
     public CommonResult getRolePermission(@PathVariable("id") Integer id){
 
-        List<PermissionDto> list = roleManage.getRolePermission(id);
+        List<PermissionResultDto> list = roleManage.getRolePermission(id);
         return CommonResult.success(list);
     }
 

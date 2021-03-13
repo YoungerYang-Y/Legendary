@@ -2,7 +2,7 @@ package com.yy.api.application.sys.menu.util;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.yy.api.application.sys.menu.dto.MenuTree;
-import com.yy.api.application.sys.menu.dto.PermissionDto;
+import com.yy.api.application.sys.permision.dto.PermissionResultDto;
 import com.yy.core.common.CommonConst;
 import com.yy.core.utils.ListSortUtil;
 
@@ -26,11 +26,11 @@ public class MenuTreeUtil {
      * @param list 权限集
      * @return: java.util.List<com.yy.api.application.sys.menu.dto.MenuTree>
      */
-    public static List<MenuTree> getMenu(List<PermissionDto> list){
+    public static List<MenuTree> getMenu(List<PermissionResultDto> list){
 
         List<MenuTree> result = new ArrayList<>();
         // 1、寻找顶级菜单
-        for (PermissionDto dto : list){
+        for (PermissionResultDto dto : list){
             if (CommonConst.TOP_MENU.compareTo(dto.getPid()) == 0){
                 MenuTree tree = new MenuTree();
                 BeanUtil.copyProperties(dto,tree);
@@ -42,9 +42,9 @@ public class MenuTreeUtil {
         // 2、寻找子菜单
         for (MenuTree tree : result){
             List<MenuTree> children = new ArrayList<>();
-            Iterator<PermissionDto> iterator = list.iterator();
+            Iterator<PermissionResultDto> iterator = list.iterator();
             while (iterator.hasNext()){
-                PermissionDto next = iterator.next();
+                PermissionResultDto next = iterator.next();
                 if (tree.getId().compareTo(next.getPid()) == 0){
                     MenuTree child = new MenuTree();
                     BeanUtil.copyProperties(next,child);

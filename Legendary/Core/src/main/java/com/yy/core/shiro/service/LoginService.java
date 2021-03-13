@@ -7,6 +7,7 @@ import com.yy.core.shiro.dto.Role;
 import com.yy.core.shiro.dto.User;
 import com.yy.mbg.domain.entity.*;
 import com.yy.mbg.domain.service.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,16 +15,19 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * LoginService:
+ * LoginService: Shiro用户数据获取服务
  *
  * @Author: YangYang
  * @Date: 2021/3/1 9:38
  */
 @Component
+@Slf4j
 public class LoginService implements ILoginService {
 
     /**
      * 用户缓存
+     *
+     * ps：配置ehcache后，可以不需要使用Map来进行缓存用户
      */
     private Map<String, User> userCache = new HashMap<>();
 
@@ -38,9 +42,9 @@ public class LoginService implements ILoginService {
     @Autowired
     private ISysPermissionService permissionService;
 
-    @Override
-    public User getUserByName(String name) {
+    protected User getUserByName(String name) {
 
+        log.info("查询用户【" + name + "】权限---Start");
         User result = new User();
         // 根据名字获取用户信息
         QueryWrapper<SysUser> userQueryWrapper = new QueryWrapper<>();
@@ -87,13 +91,14 @@ public class LoginService implements ILoginService {
         result.setRoles(roles);
 
         setUser(name, result);
-
+        log.info("【查询用户【" + name + "】权限---End】");
         return result;
     }
 
+    @Override
     public User getUser(String name){
         User user = userCache.get(name);
-        if(BeanUtil.isEmpty(user)){
+        if(BeanUtil.isNotEmpty(user)){
             return user;
         }
         else {

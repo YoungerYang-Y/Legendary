@@ -44,7 +44,7 @@ public class ShiroConfig {
     @Bean(name="securityManager")
     public SecurityManager securityManager(){
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        //设置自定义realm.
+        //设置自定义realm
         securityManager.setRealm(customRealm());
         //配置记住我
         securityManager.setRememberMeManager(rememberMeManager());
@@ -242,7 +242,6 @@ public class ShiroConfig {
         sessionManager.setSessionIdCookie(sessionIdCookie());
         sessionManager.setSessionDAO(sessionDAO());
         sessionManager.setCacheManager(ehCacheManager());
-
         //全局会话超时时间（单位毫秒），默认30分钟  暂时设置为10秒钟 用来测试
         sessionManager.setGlobalSessionTimeout(1800000);
         //是否开启删除无效的session对象  默认为true
@@ -253,7 +252,6 @@ public class ShiroConfig {
         //设置该属性 就不需要设置 ExecutorServiceSessionValidationScheduler 底层也是默认自动调用ExecutorServiceSessionValidationScheduler
         //暂时设置为 5秒 用来测试
         sessionManager.setSessionValidationInterval(3600000);
-
         //取消url 后面的 JSESSIONID
         sessionManager.setSessionIdUrlRewritingEnabled(false);
 
@@ -306,5 +304,4 @@ public class ShiroConfig {
         formAuthenticationFilter.setRememberMeParam("rememberMe");
         return formAuthenticationFilter;
     }
-
 }
