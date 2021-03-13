@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d31c0817-8ca3-48ba-8f0b-e87d806312c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mbg/extend/dto/UserPermissionDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mbg/extend/dto/UserRoleDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mbg/extend/mapper/UserPermissionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MBG-Extend/src/main/java/com/yy/mbg/extend/mapper/UserRoleMapper.java" afterDir="false" />
+    <list default="true" id="d31c0817-8ca3-48ba-8f0b-e87d806312c5" name="Default Changelist" comment="Update README.md&#10;&#10;(cherry picked from commit 3a747c6328de2bc0e51b975744d34026ef8892d2)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +25,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="9d7cf3a4-d071-4e23-9ae8-4aaac3e1392a" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -58,7 +57,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.44329897" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -269,7 +268,7 @@
     <option name="beanDetailsProportion" value="0.3" />
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\yangyang\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -290,7 +289,7 @@
       <workItem from="1614865357127" duration="399000" />
       <workItem from="1614865775783" duration="38087000" />
       <workItem from="1615339532134" duration="30969000" />
-      <workItem from="1615611318308" duration="719000" />
+      <workItem from="1615611318308" duration="7321000" />
     </task>
     <task id="LOCAL-00001" summary="1、解决MBG-Extend模块的mapper无法载入bean的问题&#10;2、优化代码结构，第一阶段完成">
       <created>1615611893519</created>
@@ -299,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615611893520</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1、补充上传：MBG-Extend子模块的mapper与dto">
+      <created>1615612094674</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615612094674</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +324,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1、解决MBG-Extend模块的mapper无法载入bean的问题&#10;2、优化代码结构，第一阶段完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、解决MBG-Extend模块的mapper无法载入bean的问题&#10;2、优化代码结构，第一阶段完成" />
+    <MESSAGE value="1、补充上传：MBG-Extend子模块的mapper与dto" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、补充上传：MBG-Extend子模块的mapper与dto" />
   </component>
   <component name="WindowStateProjectService">
     <state x="359" y="0" width="735" height="860" key="#ApiApplication" timestamp="1614867493792">
@@ -381,10 +388,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="452" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.860@0.0.1440.860" timestamp="1615446167014" />
-    <state x="178" y="43" width="1109" height="814" key="CommitChangelistDialog2" timestamp="1615611892342">
+    <state x="178" y="43" width="1109" height="814" key="CommitChangelistDialog2" timestamp="1615616535570">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="178" y="43" width="1109" height="814" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1615611892342" />
+    <state x="178" y="43" width="1109" height="814" key="CommitChangelistDialog2/0.0.1440.860@0.0.1440.860" timestamp="1615616535570" />
     <state width="432" height="466" key="DebuggerActiveHint" timestamp="1614306947526">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -393,10 +400,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="151" y="89" key="DiffContextDialog/0.0.1440.860@0.0.1440.860" timestamp="1615611541794" />
-    <state x="502" y="206" key="FileChooserDialogImpl" timestamp="1612688262035">
+    <state x="502" y="206" key="FileChooserDialogImpl" timestamp="1615616610226">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="502" y="206" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1612688262035" />
+    <state x="502" y="206" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1615616610226" />
     <state width="1115" height="201" key="GridCell.Tab.0.bottom" timestamp="1615459119753">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -449,18 +456,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="252" y="106" key="Maven.ArtifactSearchDialog/0.0.1440.860@0.0.1440.860" timestamp="1614657168990" />
-    <state x="223" y="11" key="SettingsEditor" timestamp="1615348984875">
+    <state x="223" y="11" key="SettingsEditor" timestamp="1615616644353">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="223" y="11" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1615348984875" />
+    <state x="223" y="11" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1615616644353" />
+    <state x="314" y="184" key="Vcs.Push.Dialog.v2" timestamp="1615619043412">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="314" y="184" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1615619043412" />
     <state width="734" height="668" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1615259830362">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="734" height="668" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.0.1440.860@0.0.1440.860" timestamp="1615259830362" />
-    <state x="517" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615611944608">
+    <state x="517" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615615945434">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="517" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1615611944608" />
+    <state x="517" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1615615945434" />
     <state x="493" y="181" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1614657008589">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -473,6 +484,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="dock-window-1/0.0.1440.860@0.0.1440.860" timestamp="1614300380215" />
+    <state x="398" y="242" key="git4idea.merge.GitPullDialog" timestamp="1615616339524">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="398" y="242" key="git4idea.merge.GitPullDialog/0.0.1440.860@0.0.1440.860" timestamp="1615616339524" />
     <state x="147" y="129" key="new project wizard" timestamp="1615364778964">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
