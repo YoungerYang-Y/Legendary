@@ -1,8 +1,0 @@
-### 开发环境 ###
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/legendary?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-    username: root
-    password: root
-

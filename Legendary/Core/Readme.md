@@ -1,4 +1,0 @@
-- Redis配置与切面
-    - key格式：参数_类名:方法名
-- ExceptionAOP异常切面
-- Shiro权限模块
