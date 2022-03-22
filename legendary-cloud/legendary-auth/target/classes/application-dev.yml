@@ -29,3 +29,19 @@ dubbo:
   protocol:
     name: dubbo
     port: -1
+
+# 允许匿名访问的白名单
+secure:
+  ignored:
+    urls:
+      - "/swagger-ui.html"
+      - "/swagger-resources/**"
+      - "/swagger/**"
+      - "/webjars/springfox-swagger-ui/**"
+      - "/**/v2/api-docs"
+      - "/**/*.js"
+      - "/**/*.css"
+      - "/**/*.png"
+      - "/**/*.ico"
+      - "/actuator/**"
+      - "/oauth/**"

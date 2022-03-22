@@ -1,6 +1,6 @@
 package pers.legendary.service.business.user;
 
-import pers.legendary.rbac.entity.SysUser;
+import pers.legendary.rbac.model.UserModel;
 
 /**
  * Description: 用户服务
@@ -17,5 +17,5 @@ public interface IUserService {
      * @param username 用户唯一标识
      * @return 用户信息
      */
-    SysUser getUserByUsername(String username);
+    UserModel getUserByUsername(String username);
 }

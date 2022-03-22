@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * Description: Spring Security 权限配置
@@ -64,7 +63,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/oauth/**")
-                // 与登录相关的请求都可以通过
                 .permitAll()
                 .and()
                 // 配置登录表单
@@ -78,7 +76,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public static void main(String[] args) {
 
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String yy = passwordEncoder.encode("user1");
+        String yy = passwordEncoder.encode("gateway-client");
         System.out.println(yy);
     }
 }

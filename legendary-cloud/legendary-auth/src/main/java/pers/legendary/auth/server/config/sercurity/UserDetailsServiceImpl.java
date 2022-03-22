@@ -7,13 +7,14 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
-import pers.legendary.rbac.entity.SysUser;
+import pers.legendary.rbac.entity.SysPermission;
+import pers.legendary.rbac.model.UserModel;
 import pers.legendary.service.business.user.IUserService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Description: 自定义的用户服务
@@ -26,18 +27,26 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @DubboReference(interfaceClass = IUserService.class, group = "UserService",version = "0.0.1")
+    @DubboReference(interfaceClass = IUserService.class, group = "UserService", version = "0.0.1")
     private IUserService userService;
-
-    /**
-     * TODO 循环依赖？
-     */
-//    private final BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String account) throws UsernameNotFoundException {
-        SysUser user = userService.getUserByUsername(account);
+        UserModel user;
+        try {
+            user = userService.getUserByUsername(account);
+        } catch (Exception e) {
+            throw new UsernameNotFoundException("用户【" + account + "】不存在");
+        }
+        // Spring Security中的权限校验只比较字符串，不像Shiro一样认为角色与权限有从属关系
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+
+        user.getRoles().forEach(role -> {
+            Set<SysPermission> permissions = role.getPermissions();
+            permissions.forEach(permission -> authorities.add(new SimpleGrantedAuthority(permission.getValue())));
+            authorities.add(new SimpleGrantedAuthority(role.getName()));
+        });
+
         return new User(user.getUsername(), user.getPassword(), authorities);
     }
 }
