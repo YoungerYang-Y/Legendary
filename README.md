@@ -1,8 +1,9 @@
 # Legendary
 
-## 简介
+## GitHub README 统计
 
-> RABC 权限管理系统
+[![monkeyDyang's Github stats](https://github-readme-stats.vercel.app/api?username=monkeyDyang&show_icons=true)](https://github.com/monkeyDyang/Legendary)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=monkeyDyang&layout=compact)](https://github.com/monkeyDyang/Legendary)
 
 ## Commit History
 
@@ -12,7 +13,5 @@
 
 ![Stargazers over time](https://starchart.cc/monkeyDyang/Legendary.svg)
 
-![monkeyDyang's Github stats](https://github-readme-stats.vercel.app/api?username=monkeyDyang&show_icons=true)
-
-  <!--START_SECTION:waka-->
-  <!--END_SECTION:waka-->
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
