@@ -67,6 +67,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .userDetailsService(userDetailsService)
                 // 授权码服务
                 .authorizationCodeServices(authorizationCodeServices())
+                .accessTokenConverter(accessTokenConverter())
                 // 配置token存储方式
                 .tokenStore(tokenStore());
     }
