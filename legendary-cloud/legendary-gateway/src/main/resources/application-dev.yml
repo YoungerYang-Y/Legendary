@@ -6,7 +6,7 @@ spring:
   security:
     oauth2:
       authorization:
-        check-token-access: http://localhost:13181
+        check-token-access: http://localhost:13181/oauth/check_token
   cloud:
     gateway:
       routes:

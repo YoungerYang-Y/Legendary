@@ -2,10 +2,9 @@ package pers.legendary.gateway.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.reactive.CorsWebFilter;
-import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
-import org.springframework.web.util.pattern.PathPatternParser;
+import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.web.server.SecurityWebFilterChain;
 
 /**
  * Description:
@@ -15,19 +14,13 @@ import org.springframework.web.util.pattern.PathPatternParser;
  * @date 2022/4/11 22:42
  */
 @Configuration
+@EnableWebFluxSecurity
 public class GatewayConfig {
+
     @Bean
-    public CorsWebFilter corsFilter() {
-        CorsConfiguration config = new CorsConfiguration();
-        //支持所有方法
-        config.addAllowedMethod("*");
-        //跨域处理 允许所有的域
-        config.addAllowedOrigin("*");
-        //支持所有请求头
-        config.addAllowedHeader("*");
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(new PathPatternParser());
-        //匹配所有请求
-        source.registerCorsConfiguration("/**", config);
-        return new CorsWebFilter(source);
+    public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
+        // 配置白名单和访问规则，CommonEnum枚举类
+        http.csrf().disable();
+        return http.build();
     }
 }

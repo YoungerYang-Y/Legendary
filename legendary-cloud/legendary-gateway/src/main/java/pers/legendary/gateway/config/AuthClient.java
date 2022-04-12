@@ -35,13 +35,13 @@ public class AuthClient {
 
     public boolean accessible(ServerHttpRequest request) {
         String token = request.getQueryParams().getFirst("token");
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(checkTokenUrl + "/oauth/check_token").queryParam("token", token);
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(checkTokenUrl).queryParam("token", token);
         URI url = builder.build().encode().toUri();
 
         HttpEntity<?> entity = new HttpEntity<>(request.getHeaders());
 
         try {
-            ResponseEntity<TokenInfo> response = restTemplate.exchange(url, HttpMethod.GET, entity, TokenInfo.class);
+            ResponseEntity<TokenInfo> response = restTemplate.exchange(url, HttpMethod.POST, entity, TokenInfo.class);
             log.info("oauth request: {}, response body: {}, response status: {}",
                     entity, response.getBody(), response.getStatusCode());
             return response.getBody() != null && response.getBody().isActive();
