@@ -128,8 +128,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         return new JdbcApprovalStore(dataSource);
     }
 
-
-
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();

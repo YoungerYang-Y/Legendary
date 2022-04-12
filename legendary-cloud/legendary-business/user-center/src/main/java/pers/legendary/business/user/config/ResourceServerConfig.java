@@ -86,11 +86,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 //指定不同请求方式访问资源所需要的权限，一般查询是read，其余是write。
-                .antMatchers(HttpMethod.GET, "/**").access("#oauth2.hasScope('read')")
-                .antMatchers(HttpMethod.POST, "/**").access("#oauth2.hasScope('write')")
-                .antMatchers(HttpMethod.PATCH, "/**").access("#oauth2.hasScope('write')")
-                .antMatchers(HttpMethod.PUT, "/**").access("#oauth2.hasScope('write')")
-                .antMatchers(HttpMethod.DELETE, "/**").access("#oauth2.hasScope('write')")
+                // TODO 是根据客户端的scope来的，并不是根据permission来
+                .antMatchers(HttpMethod.GET, "/**").access("#oauth2.hasScopeMatching('.*:read')")
+                .antMatchers(HttpMethod.POST, "/**").access("#oauth2.hasScopeMatching('.*:write')")
+                .antMatchers(HttpMethod.PATCH, "/**").access("#oauth2.hasScopeMatching('.*:write')")
+                .antMatchers(HttpMethod.PUT, "/**").access("#oauth2.hasScopeMatching('.*:write')")
+                .antMatchers(HttpMethod.DELETE, "/**").access("#oauth2.hasScopeMatching('.*:write')")
                 .and()
                 .headers().addHeaderWriter((request, response) -> {
                     //允许跨域

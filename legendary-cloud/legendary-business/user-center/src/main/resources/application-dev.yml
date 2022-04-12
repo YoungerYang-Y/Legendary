@@ -14,7 +14,7 @@ spring:
         client-id: gateway-client
         client-secret: gateway-client
       authorization:
-        check-token-access: http://localhost:13181
+        check-token-access: http://localhost:13181/oauth/check_token
 
 dubbo:
   scan:

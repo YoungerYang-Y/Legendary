@@ -7,15 +7,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/legendary-common/legendary-service-interface/pom.xml" />
-        <option value="$PROJECT_DIR$/legendary-config/pom.xml" />
-        <option value="$PROJECT_DIR$/legendary-gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/legendary-gateway2/pom.xml" />
-        <option value="$PROJECT_DIR$/legendary-mbg/pom.xml" />
-      </set>
-    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

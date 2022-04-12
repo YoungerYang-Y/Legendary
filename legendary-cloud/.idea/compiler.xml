@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="legendary-auth" />
+        <module name="legendary-gateway" />
         <module name="user-center" />
         <module name="legendary-mbg" />
         <module name="nacos-provider-demo" />
@@ -18,7 +19,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="legendary-config" target="1.8" />
-      <module name="legendary-gateway" target="1.8" />
       <module name="legendary-gateway2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -26,7 +26,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="legendary-auth" options="-parameters" />
       <module name="legendary-business" options="" />
-      <module name="legendary-cloud" options="-parameters" />
+      <module name="legendary-cloud" options="" />
       <module name="legendary-common" options="" />
       <module name="legendary-config" options="-parameters" />
       <module name="legendary-core" options="-parameters" />

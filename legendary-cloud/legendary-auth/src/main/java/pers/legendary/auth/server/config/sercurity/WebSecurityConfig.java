@@ -61,7 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http.csrf().disable().authorizeRequests()
                 .antMatchers("/oauth/**")
                 .permitAll()
                 .and()
@@ -70,7 +70,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 处理登录的URL
                 .loginProcessingUrl("/login")
                 // 允许匿名访问
-                .permitAll();
+                .permitAll()
+                ;
     }
 
     public static void main(String[] args) {

@@ -8,6 +8,7 @@
         <module>legendary-auth</module>
         <module>legendary-demo</module>
         <module>legendary-business</module>
+        <module>legendary-gateway</module>
     </modules>
 
     <parent>
@@ -49,10 +50,14 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.hibernate.validator</groupId>-->
+<!--            <artifactId>hibernate-validator</artifactId>-->
+<!--            <version>7.0.3.Final</version>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>7.0.3.Final</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

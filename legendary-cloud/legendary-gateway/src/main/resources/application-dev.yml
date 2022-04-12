@@ -1,0 +1,28 @@
+server:
+  port:
+    13171
+
+spring:
+  security:
+    oauth2:
+      authorization:
+        check-token-access: http://localhost:13181
+  cloud:
+    gateway:
+      routes:
+        # OAuth2
+        - id: oauth
+          uri: lb://auth-server
+          predicates:
+            - Path=/oauth/**
+        # 用户中心
+        - id: user-center
+          uri: lb://user-center
+          predicates:
+            - Path=/user_center/**
+      discovery:
+        locator:
+          # 开启从注册中心动态创建路由的功能
+          enabled: true
+          # 使用小写服务名，默认是大写
+          lower-case-service-id: true
