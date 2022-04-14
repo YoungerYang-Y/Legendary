@@ -1,7 +1,7 @@
 package pers.legendary.business.user.controller;
 
-import pers.legendary.rbac.entity.SysRole;
-import pers.legendary.rbac.service.ISysRoleService;
+import pers.legendary.common.mbg.rbac.entity.SysRole;
+import pers.legendary.common.mbg.rbac.service.ISysRoleService;
 import org.springframework.web.bind.annotation.*;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

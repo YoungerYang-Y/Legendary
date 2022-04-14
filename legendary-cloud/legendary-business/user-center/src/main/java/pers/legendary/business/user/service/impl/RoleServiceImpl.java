@@ -4,8 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.stereotype.Component;
-import pers.legendary.rbac.service.ISysRoleService;
-import pers.legendary.service.business.user.IRoleService;
+import pers.legendary.common.service.business.user.IRoleService;
 
 /**
  * Description:

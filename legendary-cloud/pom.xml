@@ -6,7 +6,6 @@
     <modules>
         <module>legendary-common</module>
         <module>legendary-auth</module>
-        <module>legendary-demo</module>
         <module>legendary-business</module>
         <module>legendary-gateway</module>
     </modules>

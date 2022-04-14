@@ -26,3 +26,18 @@ spring:
           enabled: true
           # 使用小写服务名，默认是大写
           lower-case-service-id: true
+
+## 允许匿名访问的白名单
+ignore:
+  urls:
+    - "/swagger-ui.html"
+    - "/swagger-resources/**"
+    - "/swagger/**"
+    - "/webjars/springfox-swagger-ui/**"
+    - "/**/v2/api-docs"
+    - "/**/*.js"
+    - "/**/*.css"
+    - "/**/*.png"
+    - "/**/*.ico"
+    - "/actuator/**"
+    - "/oauth/**"

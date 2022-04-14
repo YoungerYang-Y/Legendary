@@ -11,22 +11,23 @@
         <module name="legendary-gateway" />
         <module name="user-center" />
         <module name="legendary-mbg" />
-        <module name="nacos-provider-demo" />
-        <module name="nacos-consumer-demo" />
         <module name="legendary-core" />
         <module name="legendary-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="legendary-config" target="1.8" />
+      <module name="legendary-demo" target="1.8" />
       <module name="legendary-gateway2" target="1.8" />
+      <module name="nacos-consumer-demo" target="1.8" />
+      <module name="nacos-provider-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="legendary-auth" options="-parameters" />
       <module name="legendary-business" options="" />
-      <module name="legendary-cloud" options="" />
+      <module name="legendary-cloud" options="-parameters" />
       <module name="legendary-common" options="" />
       <module name="legendary-config" options="-parameters" />
       <module name="legendary-core" options="-parameters" />

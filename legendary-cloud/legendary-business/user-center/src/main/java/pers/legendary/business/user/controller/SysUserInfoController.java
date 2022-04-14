@@ -1,7 +1,7 @@
 package pers.legendary.business.user.controller;
 
-import pers.legendary.rbac.entity.SysUserInfo;
-import pers.legendary.rbac.service.ISysUserInfoService;
+import pers.legendary.common.mbg.rbac.entity.SysUserInfo;
+import pers.legendary.common.mbg.rbac.service.ISysUserInfoService;
 import org.springframework.web.bind.annotation.*;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
