@@ -3,7 +3,6 @@ package pers.legendary.gateway.security;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
@@ -28,11 +27,11 @@ public class GatewayConfig {
     /**
      * JWT 鉴权管理器
      */
-    private final JwtAccessManager accessManager;
+    private final JwtAuthorizationManager authorizationManager;
     /**
-     * JWT 校验管理器
+     * JWT 认证管理器
      */
-    private final ReactiveAuthenticationManager tokenAuthManager;
+    private final JwtAuthenticationManager tokenAuthManager;
     /**
      * token过期异常处理
      */
@@ -51,7 +50,7 @@ public class GatewayConfig {
      */
     @Bean
     public AuthenticationWebFilter authenticationWebFilter(){
-        // 向认证过滤器中放入token校验管理器
+        // 向认证过滤器中放入token认证管理器
         AuthenticationWebFilter authenticationWebFilter = new AuthenticationWebFilter(tokenAuthManager);
         authenticationWebFilter.setServerAuthenticationConverter(new ServerBearerTokenAuthenticationConverter());
         return authenticationWebFilter;
@@ -67,7 +66,8 @@ public class GatewayConfig {
                 .authorizeExchange()
                 // 增加白名单
                 .pathMatchers(whitelistPathConfig.getUrls().toArray(new String[0])).permitAll()
-                .anyExchange().access(accessManager)
+                // 其他的需要进行鉴权
+                .anyExchange().access(authorizationManager)
                 .and()
                 .exceptionHandling()
                 .authenticationEntryPoint(requestAuthenticationEntryPoint)

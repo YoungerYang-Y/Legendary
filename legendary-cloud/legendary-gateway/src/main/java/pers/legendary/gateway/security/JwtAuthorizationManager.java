@@ -20,7 +20,7 @@ import reactor.core.publisher.Mono;
  */
 @Slf4j
 @Component
-public class JwtAccessManager implements ReactiveAuthorizationManager<AuthorizationContext> {
+public class JwtAuthorizationManager implements ReactiveAuthorizationManager<AuthorizationContext> {
 
     private static final AntPathMatcher ANT_PATH_MATCHER = new AntPathMatcher();
 

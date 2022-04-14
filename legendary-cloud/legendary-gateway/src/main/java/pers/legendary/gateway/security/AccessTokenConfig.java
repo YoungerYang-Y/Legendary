@@ -8,6 +8,8 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 /**
  * Description: Token令牌的配置
+ *  TODO
+ *      1. 替换成jwt公钥，不适用固定key
  *
  * @author YangYang
  * @version 1.0.0

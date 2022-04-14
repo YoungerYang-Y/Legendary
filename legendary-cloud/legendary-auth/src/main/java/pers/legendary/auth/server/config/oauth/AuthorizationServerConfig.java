@@ -33,6 +33,12 @@ import java.util.Collections;
  *  2、配置令牌服务
  *  3、配置令牌端点安全约束
  *
+ *  TODO
+ *      1. Client id ,ResourceIds , scopes 的使用
+ *      2. 将OAuth的mysql库与业务系统的库分开
+ *      3. 增加Redis中间件，缓解数据库压力
+ *
+ *
  * @author YangYang
  * @version 1.0.0
  * @date 2022/3/18 22:18

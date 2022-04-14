@@ -1,4 +1,4 @@
-package pers.legendary.common.core.response;
+package pers.legendary.common.core.base;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;

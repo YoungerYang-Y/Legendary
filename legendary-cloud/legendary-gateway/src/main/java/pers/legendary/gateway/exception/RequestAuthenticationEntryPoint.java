@@ -9,7 +9,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.server.ServerAuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
-import pers.legendary.common.core.response.CommonResponse;
+import pers.legendary.common.core.base.CommonResponse;
 import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
