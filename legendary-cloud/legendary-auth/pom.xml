@@ -53,7 +53,7 @@
         </dependency>
         <dependency>
             <groupId>pers.yang</groupId>
-            <artifactId>legendary-service</artifactId>
+            <artifactId>legendary-common-api</artifactId>
             <version>0.0.1</version>
             <scope>compile</scope>
         </dependency>

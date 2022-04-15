@@ -12,9 +12,9 @@
     <artifactId>legendary-common</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>legendary-mbg</module>
-        <module>legendary-service</module>
-        <module>legendary-core</module>
+        <module>legendary-common-mbg</module>
+        <module>legendary-common-api</module>
+        <module>legendary-common-core</module>
     </modules>
 
     <properties>

@@ -1,10 +1,10 @@
 package pers.legendary.business.user.controller;
 
-import pers.legendary.common.mbg.rbac.entity.SysPermission;
-import pers.legendary.common.mbg.rbac.service.ISysPermissionService;
-import org.springframework.web.bind.annotation.*;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.web.bind.annotation.*;
+import pers.legendary.common.api.business.user.entity.SysPermission;
+import pers.legendary.common.mbg.rbac.service.ISysPermissionService;
 
 /**
  *

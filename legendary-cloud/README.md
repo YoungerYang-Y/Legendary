@@ -1,23 +1,35 @@
-# legendary-cloud
+## TODO
+### legendary-auth
 
-## 简介
+    1. ClientId,ResourceIds,scopes的使用 
+    2. OAuth的mysql库与业务库拆分
+    3. 增加Redis缓存Token
+    4. 替换jwt为非对称加密
 
-> RABC 权限管理系统
+### legendary-business
 
-## 相关技术
+#### user-center
+    1. 调整permission表的value
 
-| 技术                | 版本        | 说明                     |
-| ------------------- | ----------- | ------------------------ |
-| SpringBoot          | 2.4.2       | 容器+MVC 框架            |
-| MybaitsPlus         | 3.4.0       | 持久层框架               |
-| Swagger-UI          | 2.9.2       | 文档生产工具             |
-| Redis               | 5.0         | 分布式缓存               |
-| Druid               | 1.1.10      | 数据库连接池             |
-| Log4j2              | 2.13.0      | 日志                     |
-| Hibernate-Validator | 5.2.4.Final | 校验工具                 |
-| Junit               | 3.8.1       | 单元测试支持             |
-| Lombok              | 1.18.6      | 简化对象封装工具         |
-| Hutool              | 5.5.4       | Utils 工具库             |
-| Guava               | 23.0        | Google 工具库            |
-| Shiro               | 1.6.0       | 安全认证模块             |
-| Ehcache             | 1.4.0       | 纯 Java 的进程内缓存框架 |
+### legendary-common
+
+#### legendary-core
+
+    1. 公共的BaseController，统一返回CommonResponse，封装常用接口
+    2. @SysLog：异步日志，AOP注解
+
+#### legendary-mbg
+    1. 多级缓存，caffeine + redis
+    2. 移动XML到resources
+
+### legendary-gateway
+    1. 全局拦截器，解析JWT放到Header中
+    2. 自动截取前缀
+    3. sentinel流量保护
+    4. 动态路由
+
+
+### 其他功能
+    1. seata分布式事务
+    2. OSS文件上传，MinIO
+    3. 集成SpringBootAdmin，实时查看服务日志，实时调整服务日志级别

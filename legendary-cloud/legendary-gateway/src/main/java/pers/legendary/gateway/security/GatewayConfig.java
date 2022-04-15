@@ -9,8 +9,8 @@ import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.oauth2.server.resource.web.server.ServerBearerTokenAuthenticationConverter;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.authentication.AuthenticationWebFilter;
-import pers.legendary.gateway.exception.RequestAccessDeniedHandler;
-import pers.legendary.gateway.exception.RequestAuthenticationEntryPoint;
+import pers.legendary.gateway.handler.RequestAccessDeniedHandler;
+import pers.legendary.gateway.handler.RequestAuthenticationEntryPoint;
 
 /**
  * Description:
@@ -62,7 +62,6 @@ public class GatewayConfig {
         // 配置白名单和访问规则，CommonEnum枚举类
         http
                 .httpBasic().disable()
-                .csrf().disable()
                 .authorizeExchange()
                 // 增加白名单
                 .pathMatchers(whitelistPathConfig.getUrls().toArray(new String[0])).permitAll()

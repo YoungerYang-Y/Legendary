@@ -10,9 +10,9 @@
         <module name="legendary-auth" />
         <module name="legendary-gateway" />
         <module name="user-center" />
-        <module name="legendary-mbg" />
-        <module name="legendary-core" />
-        <module name="legendary-service" />
+        <module name="legendary-common-core" />
+        <module name="legendary-common-api" />
+        <module name="legendary-common-mbg" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -27,15 +27,15 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="legendary-auth" options="-parameters" />
       <module name="legendary-business" options="" />
-      <module name="legendary-cloud" options="-parameters" />
+      <module name="legendary-cloud" options="" />
       <module name="legendary-common" options="" />
+      <module name="legendary-common-api" options="-parameters" />
+      <module name="legendary-common-core" options="-parameters" />
+      <module name="legendary-common-mbg" options="-parameters" />
       <module name="legendary-config" options="-parameters" />
-      <module name="legendary-core" options="-parameters" />
       <module name="legendary-demo" options="" />
       <module name="legendary-gateway" options="-parameters" />
       <module name="legendary-gateway2" options="-parameters" />
-      <module name="legendary-mbg" options="-parameters" />
-      <module name="legendary-service" options="-parameters" />
       <module name="nacos-consumer-demo" options="-parameters" />
       <module name="nacos-provider-demo" options="-parameters" />
       <module name="user-center" options="-parameters" />

@@ -16,8 +16,11 @@ import java.util.Base64;
 
 /**
  * Description: 网关全局过滤器配置
- *  TODO 将令牌携带的用户信息解析出来，封装成JSON数据，然后通过Base64加密，放入到请求头中，转发给下游微服务。
- *      这样一来，下游微服务只需要解密请求头中的JSON数据，即可获取用户的详细信息。
+ *  TODO
+ *      1. 将令牌携带的用户信息解析出来，封装成JSON数据，然后通过Base64加密，放入到请求头中，转发给下游微服务。
+ *          这样一来，下游微服务只需要解密请求头中的JSON数据，即可获取用户的详细信息。
+ *      2. 网关转发到业务模块时候会自动截取前缀，不用再每个微服务路由配置了StripPrefixFilter https://www.yuque.com/pig4cloud/pig/za3uwl
+ *
  * @author YangYang
  * @version 1.0.0
  * @date 2022/3/21 21:57

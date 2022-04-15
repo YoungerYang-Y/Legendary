@@ -8,9 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
-import pers.legendary.common.mbg.rbac.entity.SysPermission;
-import pers.legendary.common.mbg.rbac.model.UserModel;
-import pers.legendary.common.service.business.user.IUserService;
+import pers.legendary.common.api.business.user.entity.SysPermission;
+import pers.legendary.common.api.business.user.model.UserModel;
+import pers.legendary.common.api.business.user.service.IUserService;
 
 import java.util.ArrayList;
 import java.util.List;

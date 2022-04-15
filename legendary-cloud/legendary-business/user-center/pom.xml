@@ -24,21 +24,16 @@
         </dependency>
         <dependency>
             <groupId>pers.yang</groupId>
-            <artifactId>legendary-service</artifactId>
+            <artifactId>legendary-common-api</artifactId>
+            <version>0.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>pers.yang</groupId>
+            <artifactId>legendary-common-mbg</artifactId>
             <version>0.0.1</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
 
-    <build>
-        <resources>
-            <!--引入mapper对应的xml文件-->
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-        </resources>
-    </build>
 </project>

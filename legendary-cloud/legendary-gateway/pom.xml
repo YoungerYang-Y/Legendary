@@ -44,7 +44,7 @@
         </dependency>
         <dependency>
             <groupId>pers.yang</groupId>
-            <artifactId>legendary-core</artifactId>
+            <artifactId>legendary-common-core</artifactId>
             <version>0.0.1</version>
             <scope>compile</scope>
         </dependency>

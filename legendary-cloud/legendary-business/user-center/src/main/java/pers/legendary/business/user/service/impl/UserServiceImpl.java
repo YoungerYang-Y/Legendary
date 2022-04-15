@@ -7,11 +7,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
-import pers.legendary.common.mbg.rbac.entity.*;
+import pers.legendary.common.api.business.user.entity.*;
+import pers.legendary.common.api.business.user.model.RoleModel;
+import pers.legendary.common.api.business.user.model.UserModel;
+import pers.legendary.common.api.business.user.service.IUserService;
 import pers.legendary.common.mbg.rbac.service.*;
-import pers.legendary.common.mbg.rbac.model.RoleModel;
-import pers.legendary.common.mbg.rbac.model.UserModel;
-import pers.legendary.common.service.business.user.IUserService;
 
 import java.util.HashSet;
 import java.util.List;
