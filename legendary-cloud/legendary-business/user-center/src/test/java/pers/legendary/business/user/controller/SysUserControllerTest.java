@@ -1,6 +1,5 @@
 package pers.legendary.business.user.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.junit.jupiter.api.Test;
@@ -39,7 +38,6 @@ class SysUserControllerTest {
         BDDMockito.given(this.service.page(page, wrapper)).willReturn(page);
         mvc.perform(MockMvcRequestBuilders
                         .post("/sys_user/page")
-                        .content(JSON.toJSONString(page))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
