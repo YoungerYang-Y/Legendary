@@ -1,21 +1,18 @@
 package pers.legendary.gateway.filter;
 
-import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
-import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 import java.util.Base64;
 
 /**
- * Description: 网关全局过滤器配置
+ * Description: 全局拦截器
+ *  1.对请求进行清洗
  *  TODO
  *      1. 将令牌携带的用户信息解析出来，封装成JSON数据，然后通过Base64加密，放入到请求头中，转发给下游微服务。
  *          这样一来，下游微服务只需要解密请求头中的JSON数据，即可获取用户的详细信息。
@@ -23,22 +20,14 @@ import java.util.Base64;
  *
  * @author YangYang
  * @version 1.0.0
- * @date 2022/3/21 21:57
+ * @date 2022/4/17 22:50
  */
-@Configuration
-@RequiredArgsConstructor
-public class GatewayGlobalFilter implements GlobalFilter, Ordered {
-
-    private final TokenStore tokenStore;
-//    private final ServerBearerTokenAuthenticationConverter converter;
+public class RequestGlobalFilter implements GlobalFilter, Ordered {
 
     private static final String GATEWAY_CLIENT_AUTHORIZATION = "Basic " +
             Base64.getEncoder().encodeToString("gateway-client:gateway-client".getBytes());
 
-    /**
-     * 请求头中赋予网关服务合法客户端身份
-     */
-    @SneakyThrows
+
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 
@@ -60,11 +49,12 @@ public class GatewayGlobalFilter implements GlobalFilter, Ordered {
 //        jsonObject.put("user_name",userName);
 //        jsonObject.put("authorities",authorities);
 //        String base64 = Base64.getEncoder().encodeToString(jsonObject.toString().getBytes(StandardCharsets.UTF_8));
+//        builder.header("token_info", base64);
 
         //网关身份
         ServerHttpRequest.Builder builder = exchange.getRequest().mutate();
         builder.header("Authorization", GATEWAY_CLIENT_AUTHORIZATION);
-//        builder.header("token_info", base64);
+
         return chain.filter(exchange.mutate().request(builder.build()).build());
     }
 
