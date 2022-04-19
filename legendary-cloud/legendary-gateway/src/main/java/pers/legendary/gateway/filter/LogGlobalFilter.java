@@ -5,8 +5,8 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
+import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
@@ -22,7 +22,7 @@ import java.util.Objects;
  * @date 2022/3/21 21:57
  */
 @Slf4j
-@Configuration
+@Component
 @RequiredArgsConstructor
 public class LogGlobalFilter implements GlobalFilter, Ordered {
 

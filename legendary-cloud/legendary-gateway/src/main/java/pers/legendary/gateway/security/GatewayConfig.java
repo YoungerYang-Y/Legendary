@@ -61,6 +61,7 @@ public class GatewayConfig {
 
         // 配置白名单和访问规则，CommonEnum枚举类
         http
+                .csrf().disable()
                 .httpBasic().disable()
                 .authorizeExchange()
                 // 增加白名单

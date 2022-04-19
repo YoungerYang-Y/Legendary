@@ -1,6 +1,7 @@
 package pers.legendary.auth.server.config.sercurity;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -61,17 +62,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests()
-                .antMatchers("/oauth/**")
-                .permitAll()
-                .and()
-                // 配置登录表单
-                .formLogin()
-                // 处理登录的URL
-                .loginProcessingUrl("/login")
-                // 允许匿名访问
-                .permitAll()
-                ;
+        http.authorizeRequests()
+                .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
+                .antMatchers("/rsa/publicKey").permitAll()
+                .anyRequest().authenticated();
     }
 
     public static void main(String[] args) {

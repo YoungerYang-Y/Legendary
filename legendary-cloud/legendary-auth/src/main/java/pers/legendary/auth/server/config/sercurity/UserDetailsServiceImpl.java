@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+import pers.legendary.auth.server.constant.MessageConstant;
 import pers.legendary.common.api.business.user.entity.SysPermission;
 import pers.legendary.common.api.business.user.model.UserModel;
 import pers.legendary.common.api.business.user.service.IUserService;
@@ -36,7 +37,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         try {
             user = userService.getUserByUsername(account);
         } catch (Exception e) {
-            throw new UsernameNotFoundException("用户【" + account + "】不存在");
+            throw new UsernameNotFoundException(MessageConstant.USERNAME_PASSWORD_ERROR);
         }
         // Spring Security中的权限校验只比较字符串，不像Shiro一样认为角色与权限有从属关系
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
