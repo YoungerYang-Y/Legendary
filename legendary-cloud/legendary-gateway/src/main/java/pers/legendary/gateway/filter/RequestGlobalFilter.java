@@ -38,13 +38,13 @@ public class RequestGlobalFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 
-        //检查请求头是否有携带token令牌
+        // 检查请求头是否有携带token令牌
         String token = exchange.getRequest().getHeaders().getFirst(AuthConstant.JWT_TOKEN_HEADER.getCode());
         if (StringUtils.isEmpty(token)) {
             return chain.filter(exchange);
         }
 
-        //从token中解析用户信息并设置到Header中去
+        // 从token中解析用户信息并设置到Header中去
         String realToken = token.replace(AuthConstant.JWT_TOKEN_PREFIX.getCode(), "");
         JWSObject jwsObject = JWSObject.parse(realToken);
         String userStr = jwsObject.getPayload().toString();
@@ -53,7 +53,7 @@ public class RequestGlobalFilter implements GlobalFilter, Ordered {
         ServerHttpRequest request = exchange.getRequest().mutate().header(AuthConstant.USER_TOKEN_HEADER.getCode(), base64).build();
         exchange = exchange.mutate().request(request).build();
 
-        //网关身份
+        // 网关身份
         ServerHttpRequest.Builder builder = exchange.getRequest().mutate();
         builder.header("Authorization", GATEWAY_CLIENT_AUTHORIZATION);
 

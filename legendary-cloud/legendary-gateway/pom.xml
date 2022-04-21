@@ -23,6 +23,14 @@
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
         <dependency>
@@ -41,12 +49,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>pers.yang</groupId>
-            <artifactId>legendary-common-core</artifactId>
-            <version>0.0.1</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>pers.yang</groupId>

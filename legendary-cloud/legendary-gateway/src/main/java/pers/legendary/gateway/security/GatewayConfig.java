@@ -46,10 +46,10 @@ public class GatewayConfig {
     private final WhitelistPathConfig whitelistPathConfig;
 
     /**
-     *  认证过滤器
+     * 认证过滤器
      */
     @Bean
-    public AuthenticationWebFilter authenticationWebFilter(){
+    public AuthenticationWebFilter authenticationWebFilter() {
         // 向认证过滤器中放入token认证管理器
         AuthenticationWebFilter authenticationWebFilter = new AuthenticationWebFilter(tokenAuthManager);
         authenticationWebFilter.setServerAuthenticationConverter(new ServerBearerTokenAuthenticationConverter());

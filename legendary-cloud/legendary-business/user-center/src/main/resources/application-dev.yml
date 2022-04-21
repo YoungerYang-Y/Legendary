@@ -1,7 +1,5 @@
 server:
   port: 13191
-  servlet:
-    context-path: /user_center
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

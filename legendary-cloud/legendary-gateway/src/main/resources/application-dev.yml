@@ -3,11 +3,20 @@ server:
     13171
 
 spring:
+  main:
+    allow-bean-definition-overriding: true
   security:
     oauth2:
       authorization:
         check-token-access: http://localhost:13181/oauth/check_token
   cloud:
+    sentinel:
+      eager: true
+      filter:
+        enabled: false
+      transport:
+        dashboard: localhost:8858
+        port: 8719
     gateway:
       globalcors:
         corsConfigurations:
@@ -32,6 +41,8 @@ spring:
           uri: lb://user-center
           predicates:
             - Path=/user_center/**
+          filters:
+            - StripPrefix=1
       discovery:
         locator:
           # 开启从注册中心动态创建路由的功能
