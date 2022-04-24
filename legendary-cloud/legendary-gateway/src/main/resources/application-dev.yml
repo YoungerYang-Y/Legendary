@@ -35,7 +35,9 @@ spring:
         - id: oauth
           uri: lb://auth-server
           predicates:
-            - Path=/oauth/**
+            - Path=/auth_server/**
+          filters:
+            - StripPrefix=1
         # 用户中心
         - id: user-center
           uri: lb://user-center
@@ -63,4 +65,5 @@ ignore:
     - "/**/*.png"
     - "/**/*.ico"
     - "/actuator/**"
-    - "/oauth/**"
+    - "/auth_server/**"
+#    - "/rsa/publicKey"

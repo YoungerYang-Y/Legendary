@@ -4,7 +4,7 @@
 1. ClientId,ResourceIds,scopes的使用 
 2. OAuth的mysql库与业务库拆分
 3. 增加Redis缓存Token
-4. 替换jwt为非对称加密
+4. ~~替换jwt为非对称加密~~
 
 ### legendary-business
 
