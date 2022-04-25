@@ -160,14 +160,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         services.setSupportRefreshToken(true);
         //令牌存储策略
         services.setTokenStore(tokenStore());
-        // JWT 令牌增强
+        // JWT 令牌增强【将需要的内容放入JWT中】
         TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
         tokenEnhancerChain.setTokenEnhancers(Collections.singletonList(accessTokenConverter()));
         services.setTokenEnhancer(tokenEnhancerChain);
         // 生成有效时间（2小时）
         services.setAccessTokenValiditySeconds(7200);
-        // 刷新令牌有效时间（3天）
-        services.setRefreshTokenValiditySeconds(2592000);
+        // 刷新令牌有效时间（1天）
+        services.setRefreshTokenValiditySeconds(86400);
         return services;
     }
 }

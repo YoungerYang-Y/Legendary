@@ -24,6 +24,10 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+        <dependency>
             <groupId>pers.yang</groupId>
             <artifactId>legendary-common-api</artifactId>
             <version>0.0.1</version>
