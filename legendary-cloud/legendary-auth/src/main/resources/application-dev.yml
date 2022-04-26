@@ -18,7 +18,20 @@ spring:
     password: root
   main:
     allow-bean-definition-overriding: true
+  boot:
+    admin:
+      client:
+        url:
+          - http://localhost:1111
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
 dubbo:
   scan:
     base-packages:

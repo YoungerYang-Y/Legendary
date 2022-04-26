@@ -6,13 +6,22 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/legendary?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
-  security:
-    oauth2:
+  boot:
+    admin:
       client:
-        client-id: gateway-client
-        client-secret: gateway-client
-      authorization:
-        check-token-access: http://localhost:13181/oauth/check_token
+        url: http://localhost:11111
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
 
 dubbo:
   scan:

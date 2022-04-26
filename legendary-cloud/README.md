@@ -1,4 +1,12 @@
 ## TODO
+
+- 整合SpringBootAdmin
+- 整合ELK实现日志收集
+- 整合SkyWalking链路监控
+- 图片、文档的上传，下载，预览，检索
+    - MinIO,MongoDB,Elasticsearch
+- 菜谱功能
+
 ### legendary-auth
 
 1. ClientId,ResourceIds,scopes的使用 

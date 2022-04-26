@@ -3,12 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <modules>
-        <module>legendary-common</module>
-        <module>legendary-auth</module>
-        <module>legendary-business</module>
-        <module>legendary-gateway</module>
-    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -31,9 +25,19 @@
         <mybatis-plus.version>3.5.1</mybatis-plus.version>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.2.RELEASE</spring-cloud-alibaba.version>
+        <spring-boot-admin.version>2.3.1</spring-boot-admin.version>
+        <dubbo.version>2.7.7</dubbo.version>
+        <hutool.version>5.7.22</hutool.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
-
     </properties>
+
+    <modules>
+        <module>legendary-common</module>
+        <module>legendary-auth</module>
+        <module>legendary-business</module>
+        <module>legendary-gateway</module>
+        <module>legendary-admin</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -64,7 +68,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.7.22</version>
+            <version>${hutool.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -115,13 +119,18 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-<!--            <dependency>-->
-<!--                <groupId>com.baomidou</groupId>-->
-<!--                <artifactId>mybatis-plus-boot-starter</artifactId>-->
-<!--                <version>${mybatis-plus.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

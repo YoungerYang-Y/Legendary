@@ -10,8 +10,9 @@
         <module name="legendary-auth" />
         <module name="legendary-gateway" />
         <module name="user-center" />
-        <module name="legendary-common-core" />
         <module name="legendary-common-api" />
+        <module name="legendary-admin" />
+        <module name="legendary-common-core" />
         <module name="legendary-common-mbg" />
       </profile>
     </annotationProcessing>
@@ -25,9 +26,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="legendary-admin" options="-parameters" />
       <module name="legendary-auth" options="-parameters" />
       <module name="legendary-business" options="" />
-      <module name="legendary-cloud" options="" />
+      <module name="legendary-cloud" options="-parameters" />
       <module name="legendary-common" options="" />
       <module name="legendary-common-api" options="-parameters" />
       <module name="legendary-common-core" options="-parameters" />
