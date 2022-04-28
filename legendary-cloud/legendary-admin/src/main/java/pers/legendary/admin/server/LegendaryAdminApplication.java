@@ -13,8 +13,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @EnableAdminServer
 @SpringBootApplication
-public class SpringBootAdminApplication {
+public class LegendaryAdminApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootAdminApplication.class, args);
+        SpringApplication.run(LegendaryAdminApplication.class, args);
     }
 }

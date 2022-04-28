@@ -10,10 +10,6 @@ import org.springframework.context.annotation.Configuration;
 /**
  *
  * Description: Mybatis-Plus 配置
- *  TODO
- *      1. 开启二级缓存
- *      2. 将XML移动到resource文件夹中
- *      3. 将这个Config文件移动到别的地方
  *
  * @author YangYang
  * @date 2022-03-19 20:07:58

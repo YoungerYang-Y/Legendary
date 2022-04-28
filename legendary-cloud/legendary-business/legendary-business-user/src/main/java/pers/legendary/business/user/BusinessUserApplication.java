@@ -15,9 +15,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDubbo
 @EnableDiscoveryClient
 @SpringBootApplication(scanBasePackages = {"pers.legendary.*"})
-public class UserCenterApplication {
+public class BusinessUserApplication {
     public static void main(String[] args) {
-        SpringApplication.run(UserCenterApplication.class);
+        SpringApplication.run(BusinessUserApplication.class);
     }
 }
 

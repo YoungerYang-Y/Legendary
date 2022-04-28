@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="legendary-auth" />
         <module name="legendary-gateway" />
-        <module name="user-center" />
+        <module name="legendary-business-user" />
         <module name="legendary-common-api" />
         <module name="legendary-admin" />
         <module name="legendary-common-core" />
@@ -29,6 +29,7 @@
       <module name="legendary-admin" options="-parameters" />
       <module name="legendary-auth" options="-parameters" />
       <module name="legendary-business" options="" />
+      <module name="legendary-business-user" options="-parameters" />
       <module name="legendary-cloud" options="-parameters" />
       <module name="legendary-common" options="" />
       <module name="legendary-common-api" options="-parameters" />
@@ -40,7 +41,6 @@
       <module name="legendary-gateway2" options="-parameters" />
       <module name="nacos-consumer-demo" options="-parameters" />
       <module name="nacos-provider-demo" options="-parameters" />
-      <module name="user-center" options="-parameters" />
     </option>
   </component>
 </project>

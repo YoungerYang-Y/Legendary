@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
     <description>业务模块</description>
     <modules>
-        <module>user-center</module>
+        <module>legendary-business-user</module>
     </modules>
 
     <properties>
@@ -37,7 +37,7 @@
         </dependency>
         <!-- Dubbo Nacos registry dependency -->
         <dependency>
-            <groupId>com.alibaba</groupId>
+            <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
             <version>${dubbo.version}</version>
             <exclusions>

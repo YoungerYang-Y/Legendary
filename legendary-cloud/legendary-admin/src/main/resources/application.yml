@@ -8,11 +8,21 @@ spring:
     admin:
       ui:
         title: Legendary Admin
-      instance-auth:
-        default-user-name: admin
-        default-password: admin
+      client:
+        url:
+          - http://localhost:11111
+#      instance-auth:
+#        default-user-name: admin
+#        default-password: admin
 
 management:
   endpoint:
     health:
       show-details: always
+
+# 配置Logfile Viewer 日志挂载
+logging:
+  file:
+    name: logs/${spring.application.name}/all.log
+  level:
+    root: info

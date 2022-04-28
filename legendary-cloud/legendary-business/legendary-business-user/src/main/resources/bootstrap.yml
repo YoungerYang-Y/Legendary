@@ -1,6 +1,6 @@
 spring:
   application:
-    name: user-center
+    name: legendary-user-center
   profiles:
     active: dev
   cloud:

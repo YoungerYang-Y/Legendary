@@ -22,7 +22,7 @@ spring:
     admin:
       client:
         url:
-          - http://localhost:1111
+          - http://localhost:11111
 
 management:
   endpoints:
@@ -42,3 +42,9 @@ dubbo:
   protocol:
     name: dubbo
     port: -1
+
+logging:
+  file:
+    name: logs/${spring.application.name}/all.log
+  level:
+    root: info
