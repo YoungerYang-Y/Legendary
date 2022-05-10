@@ -18,11 +18,6 @@ spring:
     password: root
   main:
     allow-bean-definition-overriding: true
-  boot:
-    admin:
-      client:
-        url:
-          - http://localhost:11111
 
 management:
   endpoints:

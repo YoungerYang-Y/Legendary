@@ -21,10 +21,6 @@ management:
       enabled: true
 
 spring:
-  boot:
-    admin:
-      client:
-        url: http://localhost:11111
   main:
     allow-bean-definition-overriding: true
   security:

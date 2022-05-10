@@ -40,11 +40,6 @@
             <version>0.0.1</version>
             <scope>compile</scope>
         </dependency>
-        <!-- 服务监控客户端 -->
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-        </dependency>
     </dependencies>
 
 </project>
