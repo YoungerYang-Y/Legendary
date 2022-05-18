@@ -1,10 +1,10 @@
 ## TODO
 
-- 整合SpringBootAdmin
+- ~~整合SpringBootAdmin~~
+- 图片、文档的上传，下载，预览，检索
+  - MinIO,MongoDB,Elasticsearch
 - 整合ELK实现日志收集
 - 整合SkyWalking链路监控
-- 图片、文档的上传，下载，预览，检索
-    - MinIO,MongoDB,Elasticsearch
 - 菜谱功能
 
 ### legendary-auth
@@ -39,5 +39,5 @@
 ### 其他功能
 1. seata分布式事务
 2. OSS文件上传，MinIO
-3. 集成SpringBootAdmin，实时查看服务日志，实时调整服务日志级别
+3. ~~集成SpringBootAdmin，实时查看服务日志，实时调整服务日志级别~~
 4. 对于token超过有效期，但在刷新有效期内，返回特定的code，前端进行识别，发起请求刷新token，达到用户无感知的过程。
