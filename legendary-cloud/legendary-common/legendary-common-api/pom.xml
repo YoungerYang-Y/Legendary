@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>legendary-common-api</artifactId>
-    <packaging>jar</packaging>
     <description>用于Dubbo服务的声明</description>
 
     <properties>
