@@ -32,7 +32,7 @@ dubbo:
     base-packages:
       - pers.legendary.auth.server
   registry:
-    address: nacos://127.0.0.1:31848
+    address: nacos://127.0.0.1:30848
     timeout: 50000
   protocol:
     name: dubbo

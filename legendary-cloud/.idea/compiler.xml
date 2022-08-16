@@ -28,7 +28,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="legendary-admin" options="-parameters" />
       <module name="legendary-auth" options="-parameters" />
-      <module name="legendary-business" options="" />
+      <module name="legendary-business" options="-parameters" />
       <module name="legendary-business-user" options="-parameters" />
       <module name="legendary-cloud" options="" />
       <module name="legendary-common" options="" />
