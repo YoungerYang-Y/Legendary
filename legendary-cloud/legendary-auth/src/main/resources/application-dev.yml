@@ -39,7 +39,5 @@ dubbo:
     port: -1
 
 logging:
-  file:
-    name: logs/${spring.application.name}/all.log
   level:
     root: info

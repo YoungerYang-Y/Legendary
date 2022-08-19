@@ -17,7 +17,5 @@ management:
 
 # 配置Logfile Viewer 日志挂载
 logging:
-  file:
-    name: logs/${spring.application.name}/all.log
   level:
     root: info

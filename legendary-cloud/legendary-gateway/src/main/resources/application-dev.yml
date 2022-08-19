@@ -3,8 +3,6 @@ server:
     13171
 
 logging:
-  file:
-    name: logs/${spring.application.name}/all.log
   level:
     root: info
 

@@ -26,18 +26,18 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="legendary-admin" options="-parameters" />
-      <module name="legendary-auth" options="-parameters" />
-      <module name="legendary-business" options="-parameters" />
-      <module name="legendary-business-user" options="-parameters" />
+      <module name="legendary-admin" options="" />
+      <module name="legendary-auth" options="" />
+      <module name="legendary-business" options="" />
+      <module name="legendary-business-user" options="" />
       <module name="legendary-cloud" options="" />
       <module name="legendary-common" options="" />
-      <module name="legendary-common-api" options="-parameters" />
-      <module name="legendary-common-core" options="-parameters" />
-      <module name="legendary-common-mbg" options="-parameters" />
+      <module name="legendary-common-api" options="" />
+      <module name="legendary-common-core" options="" />
+      <module name="legendary-common-mbg" options="" />
       <module name="legendary-config" options="-parameters" />
       <module name="legendary-demo" options="" />
-      <module name="legendary-gateway" options="-parameters" />
+      <module name="legendary-gateway" options="" />
       <module name="legendary-gateway2" options="-parameters" />
       <module name="nacos-consumer-demo" options="-parameters" />
       <module name="nacos-provider-demo" options="-parameters" />
