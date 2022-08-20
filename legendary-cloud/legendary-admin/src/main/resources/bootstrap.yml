@@ -1,13 +1,29 @@
+server:
+  port: 11111
+
 spring:
   application:
     name: legendary-admin
+  boot:
+    admin:
+      ui:
+        title: Legendary Admin
   profiles:
-    active: dev
+    active: ${profile.active}
   cloud:
     nacos:
-      server-addr: 127.0.0.1:30848
+      server-addr: ${nacos.server-addr}
       discovery:
-        namespace: 57da2525-6d77-44f4-8c66-2a7334cde566 # dev
+        namespace: ${nacos.namespace}
         metadata:
           auth: yangyang
           version: 1.0
+
+management:
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: ${logging.level.root}

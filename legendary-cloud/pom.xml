@@ -23,6 +23,25 @@
         <hutool.version>5.8.5</hutool.version>
     </properties>
 
+    <!-- 环境 -->
+    <profiles>
+        <!-- 开发 -->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <!--默认激活配置-->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <profile.active>dev</profile.active>
+                <logging.level.root>info</logging.level.root>
+                <nacos.server-addr>127.0.0.1:30848</nacos.server-addr>
+                <nacos.namespace>57da2525-6d77-44f4-8c66-2a7334cde566</nacos.namespace>
+                <mysql.server-addr>127.0.0.1:32306</mysql.server-addr>
+            </properties>
+        </profile>
+    </profiles>
+
     <modules>
         <module>legendary-common</module>
         <module>legendary-auth</module>
@@ -190,12 +209,22 @@
 
     <build>
         <resources>
-            <!--引入mapper对应的xml文件-->
             <resource>
-                <directory>src/main/java</directory>
+                <directory>src/main/resources</directory>
                 <includes>
+                    <include>**/*.yml</include>
                     <include>**/*.xml</include>
                 </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.jks</include>
+                    <include>**/*.txt</include>
+                </includes>
+                <!-- 不对匹配的文件进行参数替换 -->
+                <filtering>false</filtering>
             </resource>
         </resources>
 

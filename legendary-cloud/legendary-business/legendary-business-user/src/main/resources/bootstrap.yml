@@ -1,13 +1,49 @@
+server:
+  port: 13191
+
 spring:
   application:
     name: legendary-user-center
   profiles:
-    active: dev
+    active: ${profile.active}
   cloud:
     nacos:
-      server-addr: 127.0.0.1:30848
+      server-addr: ${nacos.server-addr}
       discovery:
-        namespace: 57da2525-6d77-44f4-8c66-2a7334cde566 # dev
+        namespace: ${nacos.namespace}
         metadata:
           auth: yangyang
           version: 1.0
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${mysql.server-addr}/legendary?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+dubbo:
+  scan:
+    base-packages:
+      - pers.legendary.business.user.service.impl
+  registry:
+    address: nacos://${nacos.server-addr}
+    timeout: 50000
+  protocol:
+    name: dubbo
+    port: -1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+
+logging:
+  level:
+    root: ${logging.level.root}
+    pers.legendary.common.mbg.rbac.mapper: debug

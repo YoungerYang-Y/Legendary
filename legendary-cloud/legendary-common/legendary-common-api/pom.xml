@@ -12,11 +12,6 @@
     <artifactId>legendary-common-api</artifactId>
     <description>用于Dubbo服务的声明</description>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.baomidou</groupId>
