@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.*;
 import pers.legendary.common.api.business.user.entity.SysUser;
+import pers.legendary.common.core.annotation.RedisCache;
 import pers.legendary.common.mbg.rbac.service.ISysUserService;
 
 /**
@@ -27,6 +28,7 @@ public class SysUserController{
     /**
     * 分页查询
     */
+    @RedisCache()
     @PostMapping("/page")
     public Page<SysUser> getPage(@RequestBody Page<SysUser> page) {
         QueryWrapper<SysUser> wrapper = new QueryWrapper<>();

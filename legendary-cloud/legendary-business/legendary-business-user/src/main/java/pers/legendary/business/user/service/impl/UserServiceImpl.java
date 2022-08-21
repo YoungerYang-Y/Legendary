@@ -11,6 +11,8 @@ import pers.legendary.common.api.business.user.entity.*;
 import pers.legendary.common.api.business.user.model.RoleModel;
 import pers.legendary.common.api.business.user.model.UserModel;
 import pers.legendary.common.api.business.user.service.IUserService;
+import pers.legendary.common.core.annotation.RedisCache;
+import pers.legendary.common.core.util.RedisUtil;
 import pers.legendary.common.mbg.rbac.service.*;
 
 import java.util.HashSet;
@@ -41,6 +43,7 @@ public class UserServiceImpl implements IUserService {
     /**
      * TODO: 是否考虑通过Mybatis的一对多查询进行优化
      */
+    @RedisCache(expire = RedisUtil.ONE_DAY)
     @Override
     public UserModel getUserByUsername(String username) {
 

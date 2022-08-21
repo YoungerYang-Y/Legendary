@@ -20,14 +20,7 @@ spring:
     username: root
     password: root
   redis:
-    database: 0
-    port: 6379
-    jedis:
-      pool:
-        max-active: 8
-        max-idle: 8
-        min-idle: 0
-    timeout: 10000
+    url: ${redis.server-addr}
   main:
     allow-bean-definition-overriding: true
 

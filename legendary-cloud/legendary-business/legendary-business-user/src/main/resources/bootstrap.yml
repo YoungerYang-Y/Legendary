@@ -19,6 +19,8 @@ spring:
     url: jdbc:mysql://${mysql.server-addr}/legendary?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
+  redis:
+    url: ${redis.server-addr}
 
 dubbo:
   scan:
@@ -47,3 +49,4 @@ logging:
   level:
     root: ${logging.level.root}
     pers.legendary.common.mbg.rbac.mapper: debug
+#    pers.legendary.common.core.aspect: debug
