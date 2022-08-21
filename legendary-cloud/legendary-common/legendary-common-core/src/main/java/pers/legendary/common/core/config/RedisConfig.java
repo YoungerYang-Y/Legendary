@@ -83,6 +83,7 @@ public class RedisConfig {
                         // 不缓存null
                         .disableCachingNullValues()
                         // 缓存数据保存1小时
+                        // TODO: 灵活设置失效时间
                         .entryTtl(Duration.ofHours(1));
         return RedisCacheManager.RedisCacheManagerBuilder
                 // Redis 连接工厂
@@ -104,6 +105,5 @@ public class RedisConfig {
                 o.getClass().getName() + ":" +
                         method.getName() + ":" +
                         ArrayUtil.join(params, "_");
-
     }
 }

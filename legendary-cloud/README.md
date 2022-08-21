@@ -11,7 +11,7 @@
 
 1. ClientId,ResourceIds,scopes的使用
 2. ~~OAuth的mysql库与业务库拆分【统一使用一个库】~~
-3. 增加Redis缓存Token
+3. ~~增加Redis缓存Token~~
 4. ~~替换jwt为非对称加密~~
 
 ### legendary-business
@@ -51,7 +51,7 @@
 | 外部服务     | 端口    |
 |----------|-------|
 | MySQL    | 32306 |
-| Redis    | 31379 |
+| Redis    | 30085 |
 | Nacos    | 30848 |
 | Minio    | 30900 |
 | Ku-Board | 30080 |

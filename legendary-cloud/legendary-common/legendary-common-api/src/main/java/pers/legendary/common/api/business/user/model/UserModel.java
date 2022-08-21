@@ -13,8 +13,8 @@ import java.util.Set;
  * @version 1.0.0
  * @date 2022/3/19 20:44
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class UserModel extends SysUser {
 
     private Set<RoleModel> roles;

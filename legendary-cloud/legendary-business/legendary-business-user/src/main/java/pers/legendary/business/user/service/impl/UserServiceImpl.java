@@ -6,13 +6,13 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 import pers.legendary.common.api.business.user.entity.*;
 import pers.legendary.common.api.business.user.model.RoleModel;
 import pers.legendary.common.api.business.user.model.UserModel;
 import pers.legendary.common.api.business.user.service.IUserService;
-import pers.legendary.common.core.annotation.RedisCache;
-import pers.legendary.common.core.util.RedisUtil;
 import pers.legendary.common.mbg.rbac.service.*;
 
 import java.util.HashSet;
@@ -31,6 +31,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Component
 @RequiredArgsConstructor
+@CacheConfig(cacheNames = {"UserService"})
 @DubboService(group = "UserService", version = "0.0.1")
 public class UserServiceImpl implements IUserService {
 
@@ -43,8 +44,8 @@ public class UserServiceImpl implements IUserService {
     /**
      * TODO: 是否考虑通过Mybatis的一对多查询进行优化
      */
-    @RedisCache(expire = RedisUtil.ONE_DAY)
     @Override
+    @Cacheable
     public UserModel getUserByUsername(String username) {
 
         UserModel result = new UserModel();
