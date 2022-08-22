@@ -1,11 +1,14 @@
 ## TODO
 
 - ~~整合SpringBootAdmin~~
+- 前端模块开发
+- 登录认证、统一鉴权
+- 系统管理模块后台开发
 - 图片、文档的上传，下载，预览，检索
     - MinIO,MongoDB,Elasticsearch
+- 菜谱功能
 - 整合ELK实现日志收集
 - 整合SkyWalking链路监控
-- 菜谱功能
 
 ### legendary-auth
 
