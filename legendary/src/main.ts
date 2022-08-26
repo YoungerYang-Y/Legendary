@@ -6,7 +6,7 @@ import "./assets/main.css";
 
 // 完整引入ant-design-vue
 import Antd from "ant-design-vue";
-import "ant-design-vue/dist/antd.css";
+import "ant-design-vue/dist/antd.less";
 
 const app = createApp(App);
 
