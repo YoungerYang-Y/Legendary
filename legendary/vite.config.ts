@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -31,6 +32,11 @@ export default defineConfig({
           "box-shadow-base": "0 2px 8px rgba(0, 0, 0, 0.15)", // 浮层阴影
         },
         javascriptEnabled: true,
+        // 引入less全局变量
+        additionalData: `@import "${path.resolve(
+          __dirname,
+          "src/assets/less/global.less"
+        )}";`,
       },
     },
   },
