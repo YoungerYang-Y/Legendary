@@ -1,11 +1,15 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-import './assets/main.css'
+import "./assets/main.css";
 
-const app = createApp(App)
+// 完整引入ant-design-vue
+import Antd from "ant-design-vue";
+import "ant-design-vue/dist/antd.less";
 
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+app.use(router).use(Antd);
+
+app.mount("#app");
