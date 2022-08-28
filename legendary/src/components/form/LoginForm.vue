@@ -69,4 +69,8 @@ export default {
   },
 };
 </script>
-<style lang=""></style>
+<style lang="less">
+.login-form {
+  margin: 0 25%;
+}
+</style>
