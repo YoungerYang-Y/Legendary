@@ -7,6 +7,7 @@ export default {
 
 <template>
   <a-row>
+    <!-- <768px时隐藏图片 -->
     <a-col :lg="16" :xs="0">
       <a-image
         width="100%"
