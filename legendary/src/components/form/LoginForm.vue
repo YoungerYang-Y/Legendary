@@ -2,17 +2,20 @@
 import { UserOutlined, LockOutlined } from "@ant-design/icons-vue";
 import type { ValidateErrorEntity } from "ant-design-vue/es/form/interface";
 import { reactive, type UnwrapRef } from "vue";
+import { loginApi } from "@/api/login";
+
 export interface FormState {
-  user: string;
+  username: string;
   password: string;
 }
 export default {
   setup() {
     const formState: UnwrapRef<FormState> = reactive({
-      user: "",
+      username: "",
       password: "",
     });
     const handleFinish = (values: FormState) => {
+      loginApi(formState);
       console.log(values, formState);
     };
     const handleFinishFailed = (errors: ValidateErrorEntity<FormState>) => {
@@ -42,7 +45,7 @@ export default {
       @finishFailed="handleFinishFailed"
     >
       <a-form-item>
-        <a-input v-model:value="formState.user" placeholder="Username">
+        <a-input v-model:value="formState.username" placeholder="Username">
           <template #prefix
             ><UserOutlined style="color: rgba(0, 0, 0, 0.25)"
           /></template>
@@ -64,7 +67,7 @@ export default {
           class="login-button"
           type="primary"
           html-type="submit"
-          :disabled="formState.user === '' || formState.password === ''"
+          :disabled="formState.username === '' || formState.password === ''"
         >
           登录
         </a-button>
