@@ -2,7 +2,7 @@
 import { UserOutlined, LockOutlined } from "@ant-design/icons-vue";
 import type { ValidateErrorEntity } from "ant-design-vue/es/form/interface";
 import { reactive, type UnwrapRef } from "vue";
-import { loginApi } from "@/api/login";
+import { getUserByUserName } from "@/api/login";
 
 export interface FormState {
   username: string;
@@ -11,11 +11,15 @@ export interface FormState {
 export default {
   setup() {
     const formState: UnwrapRef<FormState> = reactive({
-      username: "",
-      password: "",
+      username: "yy",
+      password: "yy",
     });
     const handleFinish = (values: FormState) => {
-      loginApi(formState);
+      // loginApi(formState);
+      getUserByUserName({
+        size: 30,
+        current: 1,
+      });
       console.log(values, formState);
     };
     const handleFinishFailed = (errors: ValidateErrorEntity<FormState>) => {
