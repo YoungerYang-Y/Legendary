@@ -1,6 +1,7 @@
 {
   "name": "legendary",
   "version": "1.0.0",
+  "license": "ISC",
   "scripts": {
     "dev": "vite --mode development",
     "build": "run-p type-check build-only",

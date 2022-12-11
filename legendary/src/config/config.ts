@@ -6,7 +6,7 @@ if (process.env.NODE_ENV === "development") {
 } else if (process.env.NODE_ENV === "production") {
   BASE_URL = "url地址";
 } else {
-  BASE_URL = "rul地址";
+  BASE_URL = "url地址";
 }
 
 export default { BASE_URL, TIME_OUT };
