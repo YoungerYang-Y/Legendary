@@ -37,9 +37,9 @@
                 <profile.active>dev</profile.active>
                 <logging.level.root>info</logging.level.root>
                 <nacos.server-addr>127.0.0.1:30848</nacos.server-addr>
-                <nacos.namespace>57da2525-6d77-44f4-8c66-2a7334cde566</nacos.namespace>
-                <mysql.server-addr>127.0.0.1:32306</mysql.server-addr>
-                <redis.server-addr>redis://seV2mTeQEP@127.0.0.1:30085</redis.server-addr>
+                <nacos.namespace>96df0494-d73b-4cd0-8009-c412b1fdc22f</nacos.namespace>
+                <mysql.server-addr>127.0.0.1:3306</mysql.server-addr>
+                <redis.server-addr>redis://@127.0.0.1:6379</redis.server-addr>
             </properties>
         </profile>
     </profiles>

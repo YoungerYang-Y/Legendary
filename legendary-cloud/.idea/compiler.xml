@@ -10,6 +10,7 @@
         <module name="legendary-auth" />
         <module name="legendary-gateway" />
         <module name="legendary-business-user" />
+        <module name="user-center" />
         <module name="legendary-common-api" />
         <module name="legendary-admin" />
         <module name="legendary-common-core" />
