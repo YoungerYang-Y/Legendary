@@ -1,0 +1,14 @@
+# 依赖的基础镜像jdk8
+FROM openjdk:8-jdk-alpine
+# 作者信息
+MAINTAINER YangYang
+# 将本地文件挂载到当前容器
+VOLUME /tmp
+# 定义进入容器时默认位置，接下来后续操作的工作位置
+WORKDIR /home/legendary
+# 需要暴露出去的端口，也就是我项目的端口
+EXPOSE 13181
+# 将上下文中.jar复制到工作目录
+ADD /target/user-center-0.0.1.jar user-center-0.0.1.jar
+# 启动容器之后，默认的运行命令
+ENTRYPOINT ["java","-jar","user-center-0.0.1.jar"]
