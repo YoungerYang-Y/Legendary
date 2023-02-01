@@ -12,7 +12,7 @@ spring:
       discovery:
         namespace: ${nacos.namespace}
         metadata:
-          auth: yangyang
+          auth: YangYang
           version: 1.0
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -49,4 +49,3 @@ logging:
   level:
     root: ${logging.level.root}
     pers.legendary.common.mbg.rbac.mapper: debug
-#    pers.legendary.common.core.aspect: debug
