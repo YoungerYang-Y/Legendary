@@ -16,7 +16,7 @@ spring:
       discovery:
         namespace: ${nacos.namespace}
         metadata:
-          auth: yangyang
+          auth: YangYang
           version: 1.0
 
 management:
