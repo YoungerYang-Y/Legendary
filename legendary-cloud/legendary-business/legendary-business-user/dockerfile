@@ -14,4 +14,4 @@ COPY /target/classes/bootstrap.yml ./config/bootstrap.yml
 ADD /target/user-center-0.0.1.jar user-center.jar
 # 启动容器之后，默认的运行命令
 # 开启远程调试：-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
-ENTRYPOINT ["java","-jar","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005","user-center.jar"]
+ENTRYPOINT ["java","-jar","user-center.jar"]
