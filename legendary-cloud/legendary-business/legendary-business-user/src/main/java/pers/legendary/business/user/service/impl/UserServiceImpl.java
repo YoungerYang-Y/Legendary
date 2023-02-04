@@ -1,19 +1,30 @@
 package pers.legendary.business.user.service.impl;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
-import pers.legendary.common.api.business.user.entity.*;
+import pers.legendary.common.api.business.user.entity.SysPermission;
+import pers.legendary.common.api.business.user.entity.SysRole;
+import pers.legendary.common.api.business.user.entity.SysRolePermissionRelation;
+import pers.legendary.common.api.business.user.entity.SysUser;
+import pers.legendary.common.api.business.user.entity.SysUserRoleRelation;
 import pers.legendary.common.api.business.user.model.RoleModel;
 import pers.legendary.common.api.business.user.model.UserModel;
+import pers.legendary.common.api.business.user.model.UserViewModel;
 import pers.legendary.common.api.business.user.service.IUserService;
-import pers.legendary.common.mbg.rbac.service.*;
+import pers.legendary.common.core.util.BeanUtils;
+import pers.legendary.common.mbg.rbac.service.ISysPermissionService;
+import pers.legendary.common.mbg.rbac.service.ISysRolePermissionRelationService;
+import pers.legendary.common.mbg.rbac.service.ISysRoleService;
+import pers.legendary.common.mbg.rbac.service.ISysUserRoleRelationService;
+import pers.legendary.common.mbg.rbac.service.ISysUserService;
 
 import java.util.HashSet;
 import java.util.List;
@@ -83,5 +94,43 @@ public class UserServiceImpl implements IUserService {
         result.setRoles(roles);
 
         return result;
+    }
+
+    @Override
+    public Page<UserViewModel> getPage(Page<UserViewModel> pageParam, UserViewModel search) {
+        // 构建查询条件
+        Page<SysUser> page = new Page<>();
+        BeanUtils.copyProperties(pageParam, page);
+        LambdaQueryWrapper<SysUser> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.like(ObjectUtil.isNotEmpty(search.getUsername()), SysUser::getUsername, search.getUsername());
+        queryWrapper.like(ObjectUtil.isNotEmpty(search.getNickname()), SysUser::getNickname, search.getNickname());
+        queryWrapper.like(ObjectUtil.isNotEmpty(search.getPhone()), SysUser::getPhone, search.getPhone());
+        queryWrapper.like(ObjectUtil.isNotEmpty(search.getEmail()), SysUser::getEmail, search.getEmail());
+        queryWrapper.eq(ObjectUtil.isNotEmpty(search.getGender()), SysUser::getGender, search.getGender());
+        queryWrapper.eq(ObjectUtil.isNotEmpty(search.getStatus()), SysUser::getStatus, search.getStatus());
+
+        // 转化查询结果
+        Page<SysUser> pageResult = userService.page(page, queryWrapper);
+        List<SysUser> records = pageResult.getRecords();
+        List<UserViewModel> models = BeanUtils.copyListProperties(records, UserViewModel::new);
+        Page<UserViewModel> result = new Page<>();
+        BeanUtils.copyProperties(pageResult, result);
+        result.setRecords(models);
+        return result;
+    }
+
+    @Override
+    public boolean addUser(UserViewModel vo) {
+        return false;
+    }
+
+    @Override
+    public boolean modifyUser(UserViewModel vo) {
+        return false;
+    }
+
+    @Override
+    public boolean removeUser(String id) {
+        return false;
     }
 }
