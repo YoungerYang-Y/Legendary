@@ -2,7 +2,6 @@ package pers.legendary.business.user.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pers.legendary.common.api.business.user.entity.SysUser;
 import pers.legendary.common.api.business.user.model.UserModel;
 import pers.legendary.common.api.business.user.model.UserViewModel;
 import pers.legendary.common.api.business.user.service.IUserService;
@@ -25,7 +25,6 @@ import pers.legendary.common.api.business.user.service.IUserService;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/user")
-@CacheConfig(cacheNames = {"UserController"})
 public class UserController {
     private final IUserService userService;
 
@@ -37,9 +36,9 @@ public class UserController {
      * @author YangYang
      * @date 2023-02-03 23:19
      */
-    @PostMapping("/{username}")
-    public UserModel getUserByUsername(@PathVariable("username") String username) {
-        return userService.getUserByUsername(username);
+    @PostMapping("/username/{username}")
+    public ResponseEntity<UserModel> getUserInfo(@PathVariable("username") String username) {
+        return ResponseEntity.ok(userService.getUserByUsername(username));
     }
 
     /**
@@ -59,26 +58,41 @@ public class UserController {
     }
 
     /**
-     * 保存
+     * 新增用户
+     *
+     * @param vo 新增用户信息
+     * @return 执行结果
+     * @author YangYang
+     * @date 2023-02-06 21:28
      */
     @PostMapping
-    public ResponseEntity<Boolean> addUser(@RequestBody UserViewModel vo) {
+    public ResponseEntity<Boolean> addUser(@RequestBody SysUser vo) {
         return ResponseEntity.ok(userService.addUser(vo));
     }
 
     /**
-     * 更新
+     * 修改用户信息
+     *
+     * @param vo 用户视图
+     * @return 执行结果
+     * @author YangYang
+     * @date 2023-02-03 21:56
      */
     @PutMapping
-    public boolean modifyUser(@RequestBody UserViewModel vo) {
-        return userService.modifyUser(vo);
+    public ResponseEntity<Boolean> modifyUser(@RequestBody UserViewModel vo) {
+        return ResponseEntity.ok(userService.modifyUser(vo));
     }
 
     /**
-     * 根据ID删除
+     * 删除用户
+     *
+     * @param username 用户名【用户唯一标识】
+     * @return 执行结果
+     * @author YangYang
+     * @date 2023-02-03 21:58
      */
-    @DeleteMapping("/{id}")
-    public boolean removeUser(@PathVariable("id") String id) {
-        return userService.removeUser(id);
+    @DeleteMapping("/username/{username}")
+    public ResponseEntity<Boolean> removeUser(@PathVariable("username") String username) {
+        return ResponseEntity.ok(userService.removeUser(username));
     }
 }
