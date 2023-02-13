@@ -1,5 +1,6 @@
 package pers.legendary.business.user.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -8,8 +9,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import pers.legendary.common.api.business.user.entity.SysPermission;
 import pers.legendary.common.api.business.user.entity.SysRole;
 import pers.legendary.common.api.business.user.entity.SysRolePermissionRelation;
@@ -19,6 +22,8 @@ import pers.legendary.common.api.business.user.model.RoleModel;
 import pers.legendary.common.api.business.user.model.UserModel;
 import pers.legendary.common.api.business.user.model.UserViewModel;
 import pers.legendary.common.api.business.user.service.IUserService;
+import pers.legendary.common.core.constant.CacheConstant;
+import pers.legendary.common.core.exception.ServiceException;
 import pers.legendary.common.core.util.BeanUtils;
 import pers.legendary.common.mbg.rbac.service.ISysPermissionService;
 import pers.legendary.common.mbg.rbac.service.ISysRolePermissionRelationService;
@@ -26,6 +31,7 @@ import pers.legendary.common.mbg.rbac.service.ISysRoleService;
 import pers.legendary.common.mbg.rbac.service.ISysUserRoleRelationService;
 import pers.legendary.common.mbg.rbac.service.ISysUserService;
 
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -52,11 +58,8 @@ public class UserServiceImpl implements IUserService {
     private final ISysRolePermissionRelationService rolePermissionRelationService;
     private final ISysPermissionService permissionService;
 
-    /**
-     * TODO: 是否考虑通过Mybatis的一对多查询进行优化
-     */
     @Override
-    @Cacheable
+    @Cacheable(key = CacheConstant.USER_DETAIL + "#username")
     public UserModel getUserByUsername(String username) {
 
         UserModel result = new UserModel();
@@ -65,7 +68,7 @@ public class UserServiceImpl implements IUserService {
         LambdaQueryWrapper<SysUser> query = new LambdaQueryWrapper<>();
         query.eq(SysUser::getUsername, username);
         SysUser user = userService.getOne(query);
-        BeanUtils.copyProperties(user, result);
+        BeanUtil.copyProperties(user, result);
 
         // 2、查询角色信息
         LambdaQueryWrapper<SysUserRoleRelation> query2 = new LambdaQueryWrapper<>();
@@ -73,11 +76,14 @@ public class UserServiceImpl implements IUserService {
         List<SysUserRoleRelation> list = userRoleRelationService.list(query2);
 
         List<Integer> roleIds = list.stream().map(SysUserRoleRelation::getRoleId).collect(Collectors.toList());
+        if (ObjectUtil.isEmpty(roleIds)) {
+            throw new ServiceException("该用户未分配角色");
+        }
         List<SysRole> sysRoles = roleService.listByIds(roleIds);
         Set<RoleModel> roles = new HashSet<>(sysRoles.size());
         sysRoles.forEach(role -> {
             RoleModel roleModel = new RoleModel();
-            BeanUtils.copyProperties(role, roleModel);
+            BeanUtil.copyProperties(role, roleModel);
 
             // 3、查询权限信息
             LambdaQueryWrapper<SysRolePermissionRelation> query3 = new LambdaQueryWrapper<>();
@@ -85,6 +91,9 @@ public class UserServiceImpl implements IUserService {
             List<SysRolePermissionRelation> list1 = rolePermissionRelationService.list(query3);
 
             List<Integer> permissionIds = list1.stream().map(SysRolePermissionRelation::getPermissionId).collect(Collectors.toList());
+            if (ObjectUtil.isEmpty(permissionIds)) {
+                throw new ServiceException("该角色未分配权限");
+            }
             List<SysPermission> sysPermissions = permissionService.listByIds(permissionIds);
             Set<SysPermission> permissions = new HashSet<>(sysPermissions);
             roleModel.setPermissions(permissions);
@@ -100,7 +109,7 @@ public class UserServiceImpl implements IUserService {
     public Page<UserViewModel> getPage(Page<UserViewModel> pageParam, UserViewModel search) {
         // 构建查询条件
         Page<SysUser> page = new Page<>();
-        BeanUtils.copyProperties(pageParam, page);
+        BeanUtil.copyProperties(pageParam, page);
         LambdaQueryWrapper<SysUser> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.like(ObjectUtil.isNotEmpty(search.getUsername()), SysUser::getUsername, search.getUsername());
         queryWrapper.like(ObjectUtil.isNotEmpty(search.getNickname()), SysUser::getNickname, search.getNickname());
@@ -114,23 +123,50 @@ public class UserServiceImpl implements IUserService {
         List<SysUser> records = pageResult.getRecords();
         List<UserViewModel> models = BeanUtils.copyListProperties(records, UserViewModel::new);
         Page<UserViewModel> result = new Page<>();
-        BeanUtils.copyProperties(pageResult, result);
+        BeanUtil.copyProperties(pageResult, result);
         result.setRecords(models);
         return result;
     }
 
     @Override
-    public boolean addUser(UserViewModel vo) {
-        return false;
+    public boolean addUser(SysUser vo) {
+        return userService.save(vo);
     }
 
     @Override
     public boolean modifyUser(UserViewModel vo) {
-        return false;
+        if (ObjectUtil.isEmpty(vo.getId())) {
+            throw new ServiceException("用户id不能为空");
+        }
+        SysUser user = userService.getById(vo.getId());
+        BeanUtil.copyProperties(vo, user, "loginTime");
+        return userService.updateById(user);
+    }
+
+    @Transactional(rollbackFor = ServiceException.class)
+    @CacheEvict(key = CacheConstant.USER_DETAIL + "#username")
+    @Override
+    public boolean removeUser(String username) {
+        // 1.获取用户，判断用户是否存在
+        SysUser user = get(username);
+
+        // 2.删除用户与角色关系表数据
+        LambdaQueryWrapper<SysUserRoleRelation> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(SysUserRoleRelation::getUserId, user.getId());
+        userRoleRelationService.remove(queryWrapper);
+
+        // 3.清除用户表数据
+        return userService.removeById(user);
     }
 
     @Override
-    public boolean removeUser(String id) {
-        return false;
+    public SysUser get(@NotNull String username) {
+        LambdaQueryWrapper<SysUser> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(SysUser::getUsername, username);
+        SysUser user = userService.getOne(wrapper, true);
+        if (ObjectUtil.isEmpty(user)) {
+            throw new ServiceException("用户不存在");
+        }
+        return user;
     }
 }

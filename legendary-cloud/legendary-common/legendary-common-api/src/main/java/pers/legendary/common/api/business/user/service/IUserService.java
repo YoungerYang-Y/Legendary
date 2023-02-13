@@ -1,6 +1,7 @@
 package pers.legendary.common.api.business.user.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import pers.legendary.common.api.business.user.entity.SysUser;
 import pers.legendary.common.api.business.user.model.UserModel;
 import pers.legendary.common.api.business.user.model.UserViewModel;
 
@@ -24,40 +25,51 @@ public interface IUserService {
     /**
      * 分页查询
      *
+     * @param pageParam 分页参数
+     * @param search    查询参数
+     * @return 分页查询结果
      * @author YangYang
      * @date 2023-02-03 21:29
-     * @param search 查询参数
-     * @return 分页查询结果
      */
     Page<UserViewModel> getPage(Page<UserViewModel> pageParam, UserViewModel search);
 
     /**
      * 新增用户
      *
+     * @param vo 新增用户信息
+     * @return 执行结果
      * @author YangYang
      * @date 2023-02-03 21:33
-     * @param vo 用户视图
-     * @return 执行结果
      */
-    boolean addUser(UserViewModel vo);
+    boolean addUser(SysUser vo);
 
     /**
      * 修改用户信息
      *
-     * @author YangYang
-     * @date 2023-02-03 21:56
      * @param vo 用户视图
      * @return 执行结果
+     * @author YangYang
+     * @date 2023-02-03 21:56
      */
     boolean modifyUser(UserViewModel vo);
 
     /**
      * 删除用户
      *
+     * @param username 用户名【用户唯一标识】
+     * @return 执行结果
      * @author YangYang
      * @date 2023-02-03 21:58
-     * @param id 用户主键id
-     * @return 执行结果
      */
-    boolean removeUser(String id);
+    boolean removeUser(String username);
+
+    /**
+     * 根据id获取用户信息
+     *
+     * @param username 用户名【用户唯一标识】
+     * @return 用户信息
+     * @author YangYang
+     * @date 2023-02-06 22:13
+     */
+    SysUser get(String username);
 }
