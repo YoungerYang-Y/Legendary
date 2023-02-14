@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>pers.yang</groupId>
@@ -21,7 +21,7 @@
         <spring-boot-admin.version>2.7.1</spring-boot-admin.version>
         <log4j2.version>2.14.0</log4j2.version>
         <dubbo.version>2.7.13</dubbo.version>
-        <hutool.version>5.8.5</hutool.version>
+        <hutool.version>5.8.12</hutool.version>
     </properties>
 
     <!-- 环境 -->
