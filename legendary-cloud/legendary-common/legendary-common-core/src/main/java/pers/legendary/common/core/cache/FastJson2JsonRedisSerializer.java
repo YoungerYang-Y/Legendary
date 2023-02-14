@@ -1,7 +1,8 @@
 package pers.legendary.common.core.cache;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONReader;
+import com.alibaba.fastjson2.JSONWriter;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.SerializationException;
 
@@ -30,11 +31,9 @@ public class FastJson2JsonRedisSerializer<T> implements RedisSerializer<T> {
         if (t == null) {
             return new byte[0];
         }
-        return JSON.toJSONString(t, SerializerFeature.WriteClassName,
-                // 是否输出值为null的字段,默认为false
-                SerializerFeature.WriteMapNullValue,
+        return JSON.toJSONString(t, JSONWriter.Feature.WriteClassName,
                 // List字段如果为null,输出为[],而非null
-                SerializerFeature.WriteNullListAsEmpty).getBytes(DEFAULT_CHARSET);
+                JSONWriter.Feature.WriteNullListAsEmpty).getBytes(DEFAULT_CHARSET);
     }
 
     @Override
@@ -43,7 +42,7 @@ public class FastJson2JsonRedisSerializer<T> implements RedisSerializer<T> {
             return null;
         }
         String str = new String(bytes, DEFAULT_CHARSET);
-        return JSON.parseObject(str, clazz);
+        return JSON.parseObject(str, clazz, JSONReader.Feature.SupportAutoType);
     }
 
 }

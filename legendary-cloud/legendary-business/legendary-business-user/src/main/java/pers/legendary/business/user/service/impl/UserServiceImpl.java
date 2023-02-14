@@ -90,7 +90,7 @@ public class UserServiceImpl implements IUserService {
 
             List<Integer> permissionIds = list1.stream().map(SysRolePermissionRelation::getPermissionId).collect(Collectors.toList());
             if (ObjectUtil.isEmpty(permissionIds)) {
-                throw new ServiceException("该角色未分配权限");
+                return;
             }
             List<SysPermission> sysPermissions = permissionService.listByIds(permissionIds);
             Set<SysPermission> permissions = new HashSet<>(sysPermissions);
