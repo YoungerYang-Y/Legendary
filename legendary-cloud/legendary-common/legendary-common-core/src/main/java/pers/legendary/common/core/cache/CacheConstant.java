@@ -1,4 +1,4 @@
-package pers.legendary.common.core.constant;
+package pers.legendary.common.core.cache;
 
 /**
  * Description: 定义缓存key常量
@@ -12,7 +12,7 @@ public final class CacheConstant {
     /**
      * 用户信息key前缀
      */
-    public static final String USER_DETAIL = "sys:user_detail:";
+    public static final String USER_DETAIL = "sys:user_detail";
 
 
     private CacheConstant() {

@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
-import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
@@ -22,7 +21,7 @@ import pers.legendary.common.api.business.user.model.RoleModel;
 import pers.legendary.common.api.business.user.model.UserModel;
 import pers.legendary.common.api.business.user.model.UserViewModel;
 import pers.legendary.common.api.business.user.service.IUserService;
-import pers.legendary.common.core.constant.CacheConstant;
+import pers.legendary.common.core.cache.CacheConstant;
 import pers.legendary.common.core.exception.ServiceException;
 import pers.legendary.common.core.util.BeanUtils;
 import pers.legendary.common.mbg.rbac.service.ISysPermissionService;
@@ -48,7 +47,6 @@ import java.util.stream.Collectors;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-@CacheConfig(cacheNames = {"UserService"})
 @DubboService(group = "UserService", version = "0.0.1")
 public class UserServiceImpl implements IUserService {
 
@@ -59,7 +57,7 @@ public class UserServiceImpl implements IUserService {
     private final ISysPermissionService permissionService;
 
     @Override
-    @Cacheable(key = CacheConstant.USER_DETAIL + "#username")
+    @Cacheable(cacheNames = CacheConstant.USER_DETAIL, key = "#username")
     public UserModel getUserByUsername(String username) {
 
         UserModel result = new UserModel();
@@ -92,7 +90,7 @@ public class UserServiceImpl implements IUserService {
 
             List<Integer> permissionIds = list1.stream().map(SysRolePermissionRelation::getPermissionId).collect(Collectors.toList());
             if (ObjectUtil.isEmpty(permissionIds)) {
-                throw new ServiceException("该角色未分配权限");
+                return;
             }
             List<SysPermission> sysPermissions = permissionService.listByIds(permissionIds);
             Set<SysPermission> permissions = new HashSet<>(sysPermissions);

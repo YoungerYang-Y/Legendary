@@ -1,6 +1,6 @@
-package pers.legendary.common.core.config;
+package pers.legendary.common.core.cache;
 
-import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.text.CharSequenceUtil;
 import org.springframework.data.redis.cache.RedisCache;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
@@ -33,7 +33,7 @@ public class CustomCacheManager extends RedisCacheManager {
         //名称中存在#标记进行到期时间配置
         if (name.contains(SPLIT_CHAT)) {
             String[] split = name.split(SPLIT_CHAT);
-            if (StrUtil.isNumeric(split[1])) {
+            if (CharSequenceUtil.isNumeric(split[1])) {
                 //配置缓存到期时间
                 int cycle = Integer.parseInt(split[1]);
                 return super.createRedisCache(split[0], cacheConfig.entryTtl(Duration.ofMinutes(cycle)));
