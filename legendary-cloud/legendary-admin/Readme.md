@@ -1,1 +1,0 @@
-注意: 在Client在通过注册中心的方式向Server接入时，SpringbootAdmin需要做最后启动（或者重启它）才能在监控页面看到
