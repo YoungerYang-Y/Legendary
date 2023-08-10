@@ -4,11 +4,12 @@ server:
 spring:
   application:
     name: legendary-auth
-  profiles:
-    active: ${profile.active}
   cloud:
     nacos:
       server-addr: ${nacos.server-addr}
+      config:
+        namespace: ${nacos.namespace}
+        file-extension: yaml
       discovery:
         namespace: ${nacos.namespace}
         metadata:
@@ -16,11 +17,11 @@ spring:
           version: 1.0
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${mysql.server-addr}/legendary?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://127.0.0.1:3306/legendary?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
   redis:
-    url: ${redis.server-addr}
+    url: redis://@127.0.0.1:6379
   main:
     allow-bean-definition-overriding: true
 
@@ -46,4 +47,4 @@ management:
 
 logging:
   level:
-    root: ${logging.level.root}
+    root: info

@@ -8,11 +8,12 @@ spring:
     admin:
       ui:
         title: Legendary Admin
-  profiles:
-    active: ${profile.active}
   cloud:
     nacos:
       server-addr: ${nacos.server-addr}
+      config:
+        namespace: ${nacos.namespace}
+        file-extension: yaml
       discovery:
         namespace: ${nacos.namespace}
         metadata:

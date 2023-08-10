@@ -5,15 +5,13 @@ server:
 spring:
   application:
     name: legendary-gateway
-  profiles:
-    active: ${profile.active}
   cloud:
     nacos:
       server-addr: ${nacos.server-addr}
       discovery:
         namespace: ${nacos.namespace}
         metadata:
-          auth: yangyang
+          auth: YangYang
           version: 1.0
     sentinel:
       eager: true

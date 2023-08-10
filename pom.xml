@@ -34,12 +34,9 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <profile.active>dev</profile.active>
                 <logging.level.root>info</logging.level.root>
-                <nacos.server-addr>192.168.0.104:8848</nacos.server-addr>
-                <nacos.namespace>dev</nacos.namespace>
-                <mysql.server-addr>192.168.0.104:3306</mysql.server-addr>
-                <redis.server-addr>redis://@192.168.0.104:6379</redis.server-addr>
+                <nacos.server-addr>127.0.0.1:8848</nacos.server-addr>
+                <nacos.namespace>05c02d63-b6cf-4be1-b0b5-64b8e5f1f172</nacos.namespace>
             </properties>
         </profile>
     </profiles>
