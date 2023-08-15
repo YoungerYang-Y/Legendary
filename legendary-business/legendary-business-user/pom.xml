@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>user-center</artifactId>
+    <artifactId>legendary-user-center</artifactId>
     <description>用户中心，完成RBAC模块的功能</description>
 
     <dependencies>

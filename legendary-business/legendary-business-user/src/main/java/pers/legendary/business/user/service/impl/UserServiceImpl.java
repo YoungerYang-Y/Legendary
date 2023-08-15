@@ -47,7 +47,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-@DubboService(group = "UserService", version = "0.0.1")
+@DubboService(version = "0.0.1")
 public class UserServiceImpl implements IUserService {
 
     private final ISysUserService userService;

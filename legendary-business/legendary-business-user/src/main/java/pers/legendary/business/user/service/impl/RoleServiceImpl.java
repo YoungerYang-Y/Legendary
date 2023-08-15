@@ -16,7 +16,7 @@ import pers.legendary.common.api.business.user.service.IRoleService;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-@DubboService(group = "RoleService",version = "0.0.1")
+@DubboService(version = "0.0.1")
 public class RoleServiceImpl implements IRoleService {
 
 }

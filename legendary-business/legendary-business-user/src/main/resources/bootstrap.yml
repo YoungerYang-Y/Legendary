@@ -28,8 +28,9 @@ dubbo:
     base-packages:
       - pers.legendary.business.user.service.impl
   registry:
-    address: nacos://${nacos.server-addr}
     timeout: 50000
+    address: nacos://${nacos.server-addr}
+    parameters[namespace]: ${nacos.namespace}
   protocol:
     name: dubbo
     port: -1

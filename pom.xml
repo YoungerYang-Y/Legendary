@@ -35,7 +35,7 @@
             </activation>
             <properties>
                 <logging.level.root>info</logging.level.root>
-                <nacos.server-addr>127.0.0.1:8848</nacos.server-addr>
+                <nacos.server-addr>192.168.0.107:8848</nacos.server-addr>
                 <nacos.namespace>05c02d63-b6cf-4be1-b0b5-64b8e5f1f172</nacos.namespace>
             </properties>
         </profile>
@@ -43,7 +43,7 @@
 
     <modules>
         <module>legendary-common</module>
-        <module>legendary-auth</module>
+        <module>legendary-auth-server</module>
         <module>legendary-business</module>
         <module>legendary-gateway</module>
         <module>legendary-admin</module>

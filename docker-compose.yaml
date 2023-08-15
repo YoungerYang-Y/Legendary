@@ -1,0 +1,16 @@
+version: "3"
+services:
+  # 创建legendary-user-center容器
+  legendary-user-center:
+    build:
+      context: /legendary-business/legendary-business-user
+      dockerfile: dockerfile
+    image: legendary-user-center:latest
+  # 创建auth-server容器
+  legendary-auth-server:
+    build:
+      context: /legendary-auth-server
+      dockerfile: dockerfile
+    image: legendary-auth-server:latest
+    depends_on:
+      - legendary-user-center
