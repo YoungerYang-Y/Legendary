@@ -39,7 +39,9 @@ dubbo:
     address: nacos://${nacos.server-addr}
     parameters:
       namespace: ${nacos.namespace}
-
+  # 不启用配置中心
+  config-center:
+    default: false
 management:
   endpoints:
     web:
