@@ -18,6 +18,7 @@ spring:
   redis:
     url: redis://@127.0.0.1:6379
 
+# 参考文档: https://cn.dubbo.apache.org/zh-cn/overview/mannual/java-sdk/reference-manual/config/properties
 dubbo:
   scan:
     base-packages:
