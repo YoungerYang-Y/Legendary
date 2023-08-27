@@ -4,6 +4,14 @@
       <settings>
         <option name="imageTag" value="legendary/user-center:dev" />
         <option name="containerName" value="legendary-user-center" />
+        <option name="envVars">
+          <list>
+            <DockerEnvVarImpl>
+              <option name="name" value="spring.profiles.active" />
+              <option name="value" value="dev" />
+            </DockerEnvVarImpl>
+          </list>
+        </option>
         <option name="portBindings">
           <list>
             <DockerPortBindingImpl>
