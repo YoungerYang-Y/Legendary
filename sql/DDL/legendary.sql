@@ -73,6 +73,7 @@ CREATE TABLE `sys_user` (
 	`gmt_modified` datetime NULL DEFAULT NULL COMMENT '修改时间',
 	`password_salt` varchar(20) CHARACTER SET UTF8MB4 NULL DEFAULT NULL COMMENT '盐',
 	PRIMARY KEY USING BTREE (`id`)
+	UNIQUE KEY `sys_user_UN` (`username`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = UTF8MB4 ROW_FORMAT = DYNAMIC COMMENT '用户表';
 
 -- ----------------------------
