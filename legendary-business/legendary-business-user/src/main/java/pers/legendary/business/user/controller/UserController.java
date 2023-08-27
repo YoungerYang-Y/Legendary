@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pers.legendary.common.api.business.user.entity.SysUser;
 import pers.legendary.common.api.business.user.model.UserModel;
 import pers.legendary.common.api.business.user.model.UserViewModel;
 import pers.legendary.common.api.business.user.service.IUserService;
@@ -59,6 +58,9 @@ public class UserController {
 
     /**
      * 新增用户
+     * <p>
+     * 1. 创建用户
+     * 2. 添加用户角色关系
      *
      * @param vo 新增用户信息
      * @return 执行结果
@@ -66,8 +68,8 @@ public class UserController {
      * @date 2023-02-06 21:28
      */
     @PostMapping
-    public ResponseEntity<Boolean> addUser(@RequestBody SysUser vo) {
-        return ResponseEntity.ok(userService.addUser(vo));
+    public ResponseEntity<Boolean> addUser(@RequestBody UserModel vo) {
+        return ResponseEntity.ok(userService.createUser(vo));
     }
 
     /**

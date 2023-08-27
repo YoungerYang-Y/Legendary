@@ -1,6 +1,7 @@
 package pers.legendary.business.user.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -31,6 +32,7 @@ import pers.legendary.common.mbg.rbac.service.ISysUserRoleRelationService;
 import pers.legendary.common.mbg.rbac.service.ISysUserService;
 
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -47,7 +49,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-@DubboService(version = "0.0.1")
+@DubboService(version = "1.0.0")
 public class UserServiceImpl implements IUserService {
 
     private final ISysUserService userService;
@@ -127,7 +129,20 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public boolean addUser(SysUser vo) {
+    public boolean createUser(UserModel vo) {
+        // add user-role relation
+        if (CollUtil.isNotEmpty(vo.getRoles())) {
+            ArrayList<SysUserRoleRelation> relations = new ArrayList<>(vo.getRoles().size());
+            for (RoleModel roleModel : vo.getRoles()) {
+                SysUserRoleRelation relation = new SysUserRoleRelation();
+                relation.setRoleId(roleModel.getId());
+                relation.setUserId(vo.getId());
+                relations.add(relation);
+            }
+            userRoleRelationService.saveBatch(relations);
+        }
+
+        // add user
         return userService.save(vo);
     }
 

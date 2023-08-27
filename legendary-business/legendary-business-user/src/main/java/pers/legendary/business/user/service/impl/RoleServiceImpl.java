@@ -37,7 +37,7 @@ import java.util.List;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-@DubboService(version = "0.0.1")
+@DubboService(version = "1.0.0")
 public class RoleServiceImpl implements IRoleService {
 
     private final ISysUserRoleRelationService userRoleRelationService;
