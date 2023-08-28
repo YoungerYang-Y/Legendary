@@ -34,14 +34,17 @@ public interface IUserService {
     Page<UserViewModel> getPage(Page<UserViewModel> pageParam, UserViewModel search);
 
     /**
-     * 新增用户
+     * 创建用户
+     * <p>
+     * 1. 创建用户
+     * 2. 添加用户角色关系
      *
-     * @param vo 新增用户信息
+     * @param vo 新创建用户信息
      * @return 执行结果
      * @author YangYang
      * @date 2023-02-03 21:33
      */
-    boolean addUser(SysUser vo);
+    boolean createUser(UserModel vo);
 
     /**
      * 修改用户信息

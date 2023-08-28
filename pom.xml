@@ -20,7 +20,7 @@
         <spring-cloud-alibaba.version>2.2.8.RELEASE</spring-cloud-alibaba.version>
         <spring-boot-admin.version>2.7.1</spring-boot-admin.version>
         <log4j2.version>2.14.0</log4j2.version>
-        <dubbo.version>2.7.13</dubbo.version>
+        <dubbo.version>3.1.3</dubbo.version>
         <hutool.version>5.8.12</hutool.version>
     </properties>
 
@@ -35,7 +35,7 @@
             </activation>
             <properties>
                 <logging.level.root>info</logging.level.root>
-                <nacos.server-addr>127.0.0.1:8848</nacos.server-addr>
+                <nacos.server-addr>192.168.0.107:8848</nacos.server-addr>
                 <nacos.namespace>05c02d63-b6cf-4be1-b0b5-64b8e5f1f172</nacos.namespace>
             </properties>
         </profile>
@@ -43,7 +43,7 @@
 
     <modules>
         <module>legendary-common</module>
-        <module>legendary-auth</module>
+        <module>legendary-auth-server</module>
         <module>legendary-business</module>
         <module>legendary-gateway</module>
         <module>legendary-admin</module>
@@ -169,35 +169,13 @@
                 <artifactId>log4j-spring-boot</artifactId>
                 <version>${log4j2.version}</version>
             </dependency>
-            <!--    Dubbo    -->
+            <!-- Dubbo相关的依赖约束 -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <artifactId>dubbo-bom</artifactId>
                 <version>${dubbo.version}</version>
-                <exclusions>
-                    <!-- 排除log4j -->
-                    <exclusion>
-                        <groupId>org.apache.dubbo</groupId>
-                        <artifactId>dubbo-common</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <!-- Dubbo Nacos registry dependency -->
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-registry-nacos</artifactId>
-                <version>${dubbo.version}</version>
-                <exclusions>
-                    <!-- 与dubbo中存在重复jar引用 -->
-                    <exclusion>
-                        <groupId>org.apache.dubbo</groupId>
-                        <artifactId>dubbo-common</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.dubbo</groupId>
-                        <artifactId>dubbo-remoting-api</artifactId>
-                    </exclusion>
-                </exclusions>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
