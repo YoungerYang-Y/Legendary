@@ -30,8 +30,8 @@ dubbo:
     group: service
     parameters:
       namespace: ${nacos.namespace}
-    # 注册行为: instance/interface/all 实例/接口/所有
-    register-mode: interface
+    # 注册行为: instance/interface/all 实例/接口/所有，默认all，3.x推荐instance
+    register-mode: instance
   protocol:
     name: dubbo
     port: 20880
@@ -43,6 +43,7 @@ dubbo:
   # 不启用配置中心
   config-center:
     default: false
+
 management:
   endpoints:
     web:
