@@ -28,7 +28,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @DubboReference(interfaceClass = IUserService.class, version = "0.0.1")
+    @DubboReference(interfaceClass = IUserService.class, version = "1.0.0")
     private IUserService userService;
 
     @Override
