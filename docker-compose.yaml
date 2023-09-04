@@ -6,11 +6,19 @@ services:
       context: /legendary-business/legendary-business-user
       dockerfile: dockerfile
     image: legendary-user-center:latest
+    ports:
+      - "13191:13191"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
   # 创建auth-server容器
   legendary-auth-server:
     build:
       context: /legendary-auth-server
       dockerfile: dockerfile
     image: legendary-auth-server:latest
+    ports:
+      - "13181:13181"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
     depends_on:
       - legendary-user-center
