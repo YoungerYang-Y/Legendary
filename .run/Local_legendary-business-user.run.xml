@@ -19,10 +19,6 @@
               <option name="hostPort" value="13191" />
             </DockerPortBindingImpl>
             <DockerPortBindingImpl>
-              <option name="containerPort" value="5005" />
-              <option name="hostPort" value="5005" />
-            </DockerPortBindingImpl>
-            <DockerPortBindingImpl>
               <option name="containerPort" value="20880" />
               <option name="hostPort" value="20880" />
             </DockerPortBindingImpl>
