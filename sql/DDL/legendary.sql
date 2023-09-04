@@ -17,8 +17,8 @@ CREATE TABLE `sys_permission` (
 	`sort` int NULL DEFAULT NULL COMMENT '排序',
 	`status` int NULL DEFAULT NULL COMMENT '启用状态；0->禁用；1->启用',
 	`version` int NULL DEFAULT 1 COMMENT '版本号',
-	`gmt_create` datetime NULL DEFAULT NULL COMMENT '创建时间',
-	`gmt_modified` datetime NULL DEFAULT NULL COMMENT '修改时间',
+	`create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
+	`update_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
 	PRIMARY KEY USING BTREE (`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = UTF8MB4 ROW_FORMAT = DYNAMIC COMMENT '系统权限表';
 
@@ -32,8 +32,8 @@ CREATE TABLE `sys_role` (
 	`name` varchar(64) CHARACTER SET UTF8MB4 NULL DEFAULT NULL COMMENT '角色名称',
 	`status` int NULL DEFAULT NULL COMMENT '状态：0->禁用；1->启用',
 	`version` int NULL DEFAULT 1 COMMENT '版本号',
-	`gmt_create` datetime NULL DEFAULT NULL COMMENT '创建时间',
-	`gmt_modified` datetime NULL DEFAULT NULL COMMENT '修改时间',
+	`create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
+	`update_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
 	`mean` varchar(100) CHARACTER SET UTF8MB4 NULL DEFAULT NULL COMMENT '角色含义',
 	PRIMARY KEY USING BTREE (`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = UTF8MB4 ROW_FORMAT = DYNAMIC COMMENT '角色表';
@@ -69,9 +69,8 @@ CREATE TABLE `sys_user` (
 	`login_time` datetime NULL DEFAULT NULL COMMENT '最后登录时间',
 	`version` int NULL DEFAULT 1 COMMENT '版本号',
 	`status` int NULL DEFAULT 1 COMMENT '帐号启用状态：0->禁用；1->启用',
-	`gmt_create` datetime NULL DEFAULT NULL COMMENT '创建时间',
-	`gmt_modified` datetime NULL DEFAULT NULL COMMENT '修改时间',
-	`password_salt` varchar(20) CHARACTER SET UTF8MB4 NULL DEFAULT NULL COMMENT '盐',
+	`create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
+	`update_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
 	PRIMARY KEY USING BTREE (`id`)
 	UNIQUE KEY `sys_user_UN` (`username`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = UTF8MB4 ROW_FORMAT = DYNAMIC COMMENT '用户表';

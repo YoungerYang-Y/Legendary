@@ -1,6 +1,10 @@
 package pers.legendary.common.api.business.user.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -13,9 +17,10 @@ import java.util.Date;
  * <p>
  * 用户表
  * </p>
+ *
  * @author YangYang
- * @date 2022-03-19 20:07:58
  * @version 1.0.0
+ * @date 2022-03-19 20:07:58
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -26,44 +31,44 @@ public class SysUser implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-    * 主键
-    */
-    @NotNull(message="[主键]不能为空")
+     * 主键
+     */
+    @NotNull(message = "[主键]不能为空")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
      * 用户名
      */
-    @Size(max= 64,message="编码长度不能超过64")
+    @Size(max = 64, message = "编码长度不能超过64")
     @TableField(value = "username")
     private String username;
 
     /**
      * 密码
      */
-    @Size(max= 64,message="编码长度不能超过64")
+    @Size(max = 64, message = "编码长度不能超过64")
     @TableField(value = "password")
     private String password;
 
     /**
      * 昵称
      */
-    @Size(max= 64,message="编码长度不能超过64")
+    @Size(max = 64, message = "编码长度不能超过64")
     @TableField(value = "nickname")
     private String nickname;
 
     /**
      * 手机号码
      */
-    @Size(max= 64,message="编码长度不能超过64")
+    @Size(max = 64, message = "编码长度不能超过64")
     @TableField(value = "phone")
     private String phone;
 
     /**
      * 邮箱
      */
-    @Size(max= 100,message="编码长度不能超过100")
+    @Size(max = 100, message = "编码长度不能超过100")
     @TableField(value = "email")
     private String email;
 
@@ -82,14 +87,14 @@ public class SysUser implements Serializable {
     /**
      * 所在城市
      */
-    @Size(max= 64,message="编码长度不能超过64")
+    @Size(max = 64, message = "编码长度不能超过64")
     @TableField(value = "city")
     private String city;
 
     /**
      * 头像
      */
-    @Size(max= 500,message="编码长度不能超过500")
+    @Size(max = 500, message = "编码长度不能超过500")
     @TableField(value = "icon")
     private String icon;
 
@@ -114,20 +119,13 @@ public class SysUser implements Serializable {
     /**
      * 创建时间
      */
-    @TableField(value = "gmt_create", fill = FieldFill.INSERT)
-    private Date gmtCreate;
+    @TableField(value = "create_time", fill = FieldFill.INSERT)
+    private Date createTime;
 
     /**
      * 修改时间
      */
-    @TableField(value = "gmt_modified", fill = FieldFill.UPDATE)
-    private Date gmtModified;
-
-    /**
-     * 盐
-     */
-    @Size(max= 20,message="编码长度不能超过20")
-    @TableField(value = "password_salt")
-    private String passwordSalt;
+    @TableField(value = "update_time", fill = FieldFill.UPDATE)
+    private Date updateTime;
 
 }

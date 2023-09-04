@@ -5,24 +5,24 @@
 <mapper namespace="pers.legendary.common.mbg.rbac.mapper.SysPermissionMapper">
 
     <resultMap id="BaseResultMap" type="pers.legendary.common.api.business.user.entity.SysPermission">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="pid" column="pid" jdbcType="INTEGER"/>
-            <result property="name" column="name" jdbcType="VARCHAR"/>
-            <result property="value" column="value" jdbcType="VARCHAR"/>
-            <result property="icon" column="icon" jdbcType="VARCHAR"/>
-            <result property="type" column="type" jdbcType="INTEGER"/>
-            <result property="uri" column="uri" jdbcType="VARCHAR"/>
-            <result property="sort" column="sort" jdbcType="INTEGER"/>
-            <result property="status" column="status" jdbcType="INTEGER"/>
-            <result property="version" column="version" jdbcType="INTEGER"/>
-            <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
-            <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="pid" column="pid" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="value" column="value" jdbcType="VARCHAR"/>
+        <result property="icon" column="icon" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="uri" column="uri" jdbcType="VARCHAR"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         id,pid,name,
         value,icon,type,
         uri,sort,status,
-        version,gmt_create,gmt_modified
+        version,create_time,update_time
     </sql>
 </mapper>
