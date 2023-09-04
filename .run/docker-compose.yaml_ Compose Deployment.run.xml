@@ -1,0 +1,23 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="LocalDocker">
+    <deployment type="docker-compose.yml">
+      <settings>
+        <option name="composeProjectName" value="legendary-dev" />
+        <option name="envFilePath" value="" />
+        <option name="profiles">
+          <list>
+            <option value="dev" />
+          </list>
+        </option>
+        <option name="commandLineOptions" value="--build" />
+        <option name="sourceFilePath" value="docker-compose.yaml" />
+        <option name="upForceRecreate" value="true" />
+      </settings>
+    </deployment>
+    <method v="2">
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean:clean" />
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="compiler:compile" />
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="package" />
+    </method>
+  </configuration>
+</component>

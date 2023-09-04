@@ -10,32 +10,39 @@ spring:
       config:
         namespace: ${nacos.namespace}
         file-extension: yaml
-      discovery:
-        namespace: ${nacos.namespace}
-        metadata:
-          auth: YangYang
-          version: 1.0
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/legendary?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
   redis:
-    url: redis://@127.0.0.1:6379
+    host: 127.0.0.1
+    password:
   main:
     allow-bean-definition-overriding: true
 
 dubbo:
+  application:
+    register-mode: instance
   scan:
     base-packages:
       - pers.legendary.auth.server
   registry:
-    timeout: 50000
     address: nacos://${nacos.server-addr}
-    parameters[namespace]: ${nacos.namespace}
+    group: service
+    parameters:
+      namespace: ${nacos.namespace}
   protocol:
     name: dubbo
-    port: -1
+    port: 20881
+  metadata-report:
+    group: metadata
+    address: nacos://${nacos.server-addr}
+    parameters:
+      namespace: ${nacos.namespace}
+  # 不启用配置中心
+  config-center:
+    default: false
 
 management:
   endpoints:

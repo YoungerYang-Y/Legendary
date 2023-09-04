@@ -9,6 +9,10 @@ package pers.legendary.auth.server.constant;
  */
 public class MessageConstant {
 
+    private MessageConstant() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static final String LOGIN_SUCCESS = "登录成功!";
 
     public static final String USERNAME_PASSWORD_ERROR = "用户名或密码错误!";
