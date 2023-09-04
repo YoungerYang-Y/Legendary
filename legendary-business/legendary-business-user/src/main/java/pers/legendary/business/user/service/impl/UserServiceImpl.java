@@ -25,6 +25,7 @@ import pers.legendary.common.api.business.user.service.IUserService;
 import pers.legendary.common.core.cache.CacheConstant;
 import pers.legendary.common.core.exception.ServiceException;
 import pers.legendary.common.core.util.BeanUtils;
+import pers.legendary.common.core.util.SecurityUtil;
 import pers.legendary.common.mbg.rbac.service.ISysPermissionService;
 import pers.legendary.common.mbg.rbac.service.ISysRolePermissionRelationService;
 import pers.legendary.common.mbg.rbac.service.ISysRoleService;
@@ -143,6 +144,8 @@ public class UserServiceImpl implements IUserService {
         }
 
         // add user
+        // 对Password进行加密处理
+        vo.setPassword(SecurityUtil.encode(vo.getPassword()));
         return userService.save(vo);
     }
 
