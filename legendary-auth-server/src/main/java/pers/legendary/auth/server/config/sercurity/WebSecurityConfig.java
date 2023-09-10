@@ -58,20 +58,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     /**
+     * 配置请求访问权限
      * 允许所有人都能访问 /oauth/**
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
+                // 允许所有人都能访问获取公钥的接口
                 .antMatchers("/rsa/publicKey").permitAll()
-                .anyRequest().authenticated();
-    }
-
-    public static void main(String[] args) {
-
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String yy = passwordEncoder.encode("gateway-client");
-        System.out.println(yy);
+                // 允许所有人都能访问 /oauth/**
+                .antMatchers("/oauth/**").permitAll()
+                // 其他请求需要认证
+                .anyRequest().authenticated()
+                // 关闭CSRF保护
+                .and().csrf().disable();
     }
 }

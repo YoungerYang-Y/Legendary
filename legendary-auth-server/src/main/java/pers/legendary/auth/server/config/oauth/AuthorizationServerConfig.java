@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -19,28 +20,28 @@ import org.springframework.security.oauth2.provider.code.AuthorizationCodeServic
 import org.springframework.security.oauth2.provider.code.JdbcAuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 import pers.legendary.auth.server.config.sercurity.UserDetailsServiceImpl;
+import pers.legendary.common.api.business.user.entity.SysUser;
 
 import javax.sql.DataSource;
 import java.security.KeyPair;
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Description: 授权服务器配置
- *  1、配置客户端
- *  2、配置令牌服务
- *  3、配置令牌端点安全约束
- *
- *  TODO
- *      1. Client id ,ResourceIds , scopes 的使用
- *      2. 将OAuth的mysql库与业务系统的库分开
- *      3. 增加Redis中间件，缓解数据库压力
- *
+ * 1、配置客户端
+ * 2、配置令牌服务
+ * 3、配置令牌端点安全约束
+ * <p>
  *
  * @author YangYang
  * @version 1.0.0
@@ -76,6 +77,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .userDetailsService(userDetailsService)
                 // 授权码服务
                 .authorizationCodeServices(authorizationCodeServices())
+                // 开启json web token模式
                 .accessTokenConverter(accessTokenConverter())
                 // 配置token存储方式
                 .tokenStore(tokenStore());
@@ -94,7 +96,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
      */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer serverSecurityConfigurer) {
-
         serverSecurityConfigurer
                 // 允许客户端发送表单来进行权限认证来获取令牌
                 .allowFormAuthenticationForClients()
@@ -137,6 +138,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         return new JdbcApprovalStore(dataSource);
     }
 
+    /**
+     * 使用非对称加密算法对token签名
+     */
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
@@ -144,11 +148,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         return converter;
     }
 
+    /**
+     * 从classpath下的密钥库中获取密钥对(公钥+私钥)
+     */
     @Bean
     public KeyPair keyPair() {
         //从classpath下的证书中获取秘钥对
-        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("oauth2.jks"), "oauth2".toCharArray());
-        return keyStoreKeyFactory.getKeyPair("oauth2", "oauth2".toCharArray());
+        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("oauth2.jks"), "2sMsWi".toCharArray());
+        return keyStoreKeyFactory.getKeyPair("oauth2", "2sMsWi".toCharArray());
     }
 
     @Bean
@@ -162,12 +169,29 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         services.setTokenStore(tokenStore());
         // JWT 令牌增强【将需要的内容放入JWT中】
         TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
-        tokenEnhancerChain.setTokenEnhancers(Collections.singletonList(accessTokenConverter()));
+        List<TokenEnhancer> tokenEnhancers = new ArrayList<>();
+        tokenEnhancers.add(tokenEnhancer());
+        tokenEnhancers.add(accessTokenConverter());
+        tokenEnhancerChain.setTokenEnhancers(tokenEnhancers);
         services.setTokenEnhancer(tokenEnhancerChain);
         // 生成有效时间（2小时）
         services.setAccessTokenValiditySeconds(7200);
         // 刷新令牌有效时间（1天）
         services.setRefreshTokenValiditySeconds(86400);
         return services;
+    }
+
+    /**
+     * JWT内容增强，加入用户Id
+     */
+    @Bean
+    public TokenEnhancer tokenEnhancer() {
+        return (accessToken, authentication) -> {
+            Map<String, Object> map = new HashMap<>(2);
+            SysUser user = (SysUser) authentication.getUserAuthentication().getPrincipal();
+            map.put("AuthConstants.JWT_USER_ID_KEY", user.getId());
+            ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(map);
+            return accessToken;
+        };
     }
 }

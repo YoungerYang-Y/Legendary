@@ -4,7 +4,6 @@ import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * Description: OAuth2 Server
@@ -14,7 +13,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @date 2022/3/18 22:37
  */
 @EnableDubbo
-@EnableDiscoveryClient
 @ConfigurationPropertiesScan
 @SpringBootApplication
 public class AuthServerApplication {

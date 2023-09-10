@@ -11,6 +11,8 @@ import java.util.Map;
 
 /**
  * 获取RSA公钥接口
+ * <p>
+ * 提供给其他资源服务获取公钥，用公钥对token进行校验
  *
  * @author YangYang
  * @version 1.0.0
