@@ -27,5 +27,8 @@
 3. 查看公钥
 
    ```bash
-   keytool -list -rfc --keystore oauth2.jks | openssl x509 -inform pem -pubkey
+   keytool -list -rfc --keystore oauth2.jks | openssl x509 -inform pem -pubkey -noout
    ```
+    * `keytool -list -rfc -keystore 2sMsWi.jks` 用于列出密钥库中的证书信息并以RFC格式输出。
+    * `openssl x509 -pubkey -noout` 用于提取证书中的公钥信息。
+    * `openssl enc -base64 -A` 用于对提取的公钥进行Base64编码。
