@@ -29,7 +29,7 @@ public class RequestAccessDeniedHandler implements ServerAccessDeniedHandler {
         ServerHttpResponse response = serverWebExchange.getResponse();
         response.setStatusCode(HttpStatus.UNAUTHORIZED);
         response.getHeaders().add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-        DataBuffer buffer = response.bufferFactory().wrap(CommonResponse.error(HttpStatus.UNAUTHORIZED.value(),"权限不足").toString().getBytes(StandardCharsets.UTF_8));
+        DataBuffer buffer = response.bufferFactory().wrap(CommonResponse.error(HttpStatus.UNAUTHORIZED.value(), "权限不足").toString().getBytes(StandardCharsets.UTF_8));
         return response.writeWith(Mono.just(buffer));
     }
 }

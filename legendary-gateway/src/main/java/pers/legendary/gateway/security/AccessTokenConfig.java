@@ -13,6 +13,8 @@ import java.io.IOException;
 
 /**
  * Description: Token令牌的配置
+ * <p>
+ * 需要和Auth Server的配置相同
  *
  * @author YangYang
  * @version 1.0.0
@@ -26,28 +28,20 @@ public class AccessTokenConfig {
         return new JwtTokenStore(accessTokenConverter());
     }
 
+    /**
+     * 使用公钥对token进行验签
+     */
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         Resource resource = new ClassPathResource("public.txt");
         String publicKey;
         try {
-            ;
             publicKey = new String(FileCopyUtils.copyToByteArray(resource.getInputStream()));
         } catch (final IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("public key not found when verify jwt");
         }
         converter.setVerifierKey(publicKey);
         return converter;
     }
-
-//    private String inputStream2String(InputStream inputStream) throws IOException {
-//        BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
-//        StringBuilder buffer = new StringBuilder();
-//        String line;
-//        while ((line = in.readLine()) != null){
-//            buffer.append(line);
-//        }
-//        return buffer.toString();
-//    }
 }

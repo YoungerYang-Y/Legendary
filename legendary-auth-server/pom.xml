@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>legendary-auth-server</artifactId>
-    <description>OAuth Server————主要完成用户Token的生成、刷新、验证。由Redis负责存储Token。</description>
+    <description>OAuth Server————主要完成用户Token的生成、刷新、验证</description>
 
     <dependencies>
         <dependency>

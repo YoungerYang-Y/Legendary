@@ -13,6 +13,8 @@ import reactor.core.publisher.Mono;
 
 /**
  * Description: 认证管理器
+ * <p>
+ * 对令牌进行解析、验签、过期时间判断
  *
  * @author YangYang
  * @version 1.0.0
@@ -31,23 +33,23 @@ public class JwtAuthenticationManager implements ReactiveAuthenticationManager {
     @Override
     public Mono<Authentication> authenticate(Authentication authentication) {
         return Mono.justOrEmpty(authentication)
-                .filter(a -> a instanceof BearerTokenAuthenticationToken)
+                .filter(BearerTokenAuthenticationToken.class::isInstance)
                 .cast(BearerTokenAuthenticationToken.class)
                 .map(BearerTokenAuthenticationToken::getToken)
                 .flatMap((accessToken -> {
                     // 解析令牌
                     OAuth2AccessToken oAuth2AccessToken = this.tokenStore.readAccessToken(accessToken);
                     // 校验token
-                    if(oAuth2AccessToken == null){
+                    if (oAuth2AccessToken == null) {
                         return Mono.error(new InvalidTokenException("无效的token!"));
-                    }else if(oAuth2AccessToken.isExpired()){
+                    } else if (oAuth2AccessToken.isExpired()) {
                         return Mono.error(new InvalidTokenException("token已过期!"));
                     }
+                    // 获取token中的身份信息
                     OAuth2Authentication oAuth2Authentication = this.tokenStore.readAuthentication(accessToken);
-                    if(oAuth2Authentication == null){
+                    if (oAuth2Authentication == null) {
                         return Mono.error(new InvalidTokenException("无效的token!"));
-                    }
-                    else{
+                    } else {
                         return Mono.just(oAuth2Authentication);
                     }
                 })).cast(Authentication.class);
