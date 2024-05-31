@@ -21,7 +21,7 @@
         <spring-boot-admin.version>2.7.1</spring-boot-admin.version>
         <log4j2.version>2.14.0</log4j2.version>
         <dubbo.version>3.1.11</dubbo.version>
-        <hutool.version>5.8.12</hutool.version>
+        <hutool.version>5.8.21</hutool.version>
     </properties>
 
     <!-- 环境 -->
